@@ -59,4 +59,6 @@ Temporary Items
 *.pem
 # build files
 dist/*
+# ENV files
+.env
 
