@@ -1,0 +1,32 @@
+{
+  "name": "werobot-bot",
+  "version": "1.0.0",
+  "description": "",
+  "author": "helloqiu <helloqiu95@gmail.com> (https://github.com/offu/werobot-bot)",
+  "license": "ISC",
+  "repository": "https://github.com/offu/werobot-bot.git",
+  "scripts": {
+    "dev": "nodemon --exec \"npm start\"",
+    "start": "probot run ./index.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "dependencies": {
+    "probot": "^6.0.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.2",
+    "smee-client": "^1.0.1",
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
