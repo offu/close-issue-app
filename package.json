@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "author": "helloqiu <helloqiu95@gmail.com> (https://github.com/offu/werobot-bot)",
-  "license": "ISC",
+  "license": "AGPL-3.0-or-later",
   "repository": "https://github.com/offu/werobot-bot.git",
   "scripts": {
     "dev": "nodemon --exec \"npm start\"",
