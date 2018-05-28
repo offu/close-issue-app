@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "nodemon --exec \"npm start\"",
     "start": "probot run ./index.js",
-    "lint": "standard --fix",
+    "fix": "standard --fix",
     "test": "standard && jest",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
