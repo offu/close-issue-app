@@ -6,9 +6,9 @@
   "license": "AGPL-3.0-or-later",
   "repository": "https://github.com/offu/werobot-bot.git",
   "scripts": {
-    "dev": "webpack --mode=development --watch",
-    "build": "webpack --mode=production",
-    "start:probot": "probot run ./dist/build.js",
+    "dev": "nodemon -e ts --exec \"tsc && npm run start:probot\"",
+    "build": "rimraf dist && tsc",
+    "start:probot": "probot run ./dist/index.js",
     "test": "npm run build && jest"
   },
   "dependencies": {
@@ -17,15 +17,11 @@
   "devDependencies": {
     "jest": "^22.4.3",
     "nodemon": "^1.17.2",
-    "nodemon-webpack-plugin": "^4.0.3",
+    "rimraf": "^2.6.2",
     "smee-client": "^1.0.1",
-    "ts-loader": "^4.3.0",
     "tslint": "^5.10.0",
     "tslint-config-standard": "^7.0.0",
-    "tslint-loader": "^3.6.0",
-    "typescript": "^2.8.3",
-    "webpack": "^4.9.1",
-    "webpack-cli": "^2.1.4"
+    "typescript": "^2.8.3"
   },
   "engines": {
     "node": ">= 8.3.0"
