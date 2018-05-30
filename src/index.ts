@@ -1,5 +1,3 @@
-import { Robot } from 'probot'
+import robot from './robot'
 
-export = (robot: Robot) => {
-  robot.log('Yay, the app was loaded!')
-}
+export = robot
