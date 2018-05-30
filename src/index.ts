@@ -1,7 +1,5 @@
-interface ProBot {
-  log: any
-}
+import { Robot } from 'probot'
 
-export = (robot: ProBot) => {
+export = (robot: Robot) => {
   robot.log('Yay, the app was loaded!')
 }

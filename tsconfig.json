@@ -4,7 +4,8 @@
     "target": "es5",
     "sourceMap": true,
     "strict": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "noImplicitAny": false // probot hasn't added all types :(
   },
   "exclude": [
     "node_modules"
