@@ -32,7 +32,7 @@ describe('parser', () => {
     const configPath = path.resolve(__dirname, '../config.example.yml')
     const config = parseConfig(configPath)
 
-    expect(config).toEqual(exampleConfig)
+    expect(config).toMatchSnapshot()
   })
 
   it('isConfig', () => {
