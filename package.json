@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "nodemon -e ts --exec \"tsc && npm run start:probot\"",
     "build": "rimraf dist && tsc",
-    "start:probot": "probot run ./dist/index.js",
+    "start:probot": "probot run ./dist/robot.js",
     "test": "jest"
   },
   "dependencies": {
