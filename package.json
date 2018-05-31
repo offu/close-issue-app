@@ -12,9 +12,9 @@
     "test": "npm run build && jest"
   },
   "dependencies": {
+    "js-yaml": "3.11.0",
     "probot": "https://github.com/probot/probot",
-    "typescript": "2.8.4",
-    "js-yaml": "3.11.0"
+    "typescript": "2.8.4"
   },
   "devDependencies": {
     "@types/bunyan": "1.8.4",
@@ -36,6 +36,7 @@
     "rimraf": "2.6.2",
     "smee-client": "1.0.1",
     "ts-jest": "22.4.6",
+    "ts-node": "^6.0.5",
     "tslint": "5.10.0",
     "tslint-config-standard": "7.0.0"
   },
@@ -56,7 +57,8 @@
       "^.+\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testMatch": [
-      "**/__tests__/**/*.ts", "**/?(*.)+(spec|test).ts"
+      "**/__tests__/**/*.ts",
+      "**/?(*.)+(spec|test).ts"
     ]
   }
 }
