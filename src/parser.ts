@@ -33,23 +33,27 @@ export function parseConfig (path: string): Config {
   }
 }
 
-export function judge (config: Array<Issue>, issueLabel: Array<string>, content: string): boolean {
-  let currentConfig: Issue | null = null
-  for (const i of config) {
-    for (const l of issueLabel) {
-      if (i.label === l) {
-        currentConfig = i // Only use one acceptable label
-        break
+export function matchIssueConfig (issueConfigArray: Array<Issue>, issueLabelArray: Array<string>): Issue | null {
+  let result: Issue | null = null
+  issueConfigArray.some((issueConfig: Issue) => {
+    for (const label of issueLabelArray) {
+      if (issueConfig.label === label) {
+        result = issueConfig
+        return true
       }
     }
-  }
-  // No config match
-  if (currentConfig === null) {
+    return false
+  })
+  return result
+}
+
+export function judge (issueConfig: Issue | null, content: string): boolean {
+  if (issueConfig === null) {
     return false
   }
-  for (const i of currentConfig.items) {
+  for (const i of issueConfig.items) {
     for (const s of i.content) {
-      if (content.indexOf(s) < 0) {
+      if (!content.includes(s)) {
         return false
       }
     }

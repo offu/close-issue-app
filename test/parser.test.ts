@@ -1,4 +1,4 @@
-import { parseConfig, isConfig, judge } from '../src/parser'
+import { parseConfig, isConfig, judge, matchIssueConfig } from '../src/parser'
 import * as path from 'path'
 
 describe('parser', () => {
@@ -27,11 +27,17 @@ describe('parser', () => {
     expect(isConfig(rightExample)).toBeTruthy()
   })
 
+  it('matchIssueConfig', () => {
+    expect(
+      matchIssueConfig(exampleConfig.issues, [exampleConfig.issues[0].label])
+    ).toEqual(exampleConfig.issues[0])
+  })
+
   it('judge', () => {
     const wrongContent = '内容1内容2'
-    expect(judge(exampleConfig.issues, ['bug'], wrongContent)).toBeFalsy()
+    expect(judge(matchIssueConfig(exampleConfig.issues, ['bug']), wrongContent)).toBeFalsy()
 
     const rightContent = '内容1内容2🐶'
-    expect(judge(exampleConfig.issues, ['bug'], rightContent)).toBeTruthy()
+    expect(judge(matchIssueConfig(exampleConfig.issues, ['bug']), rightContent)).toBeTruthy()
   })
 })

@@ -1,5 +1,5 @@
 import { Robot, Context } from 'probot'
-import { parseConfig, judge } from './parser'
+import { parseConfig, judge, matchIssueConfig } from './parser'
 
 let configPath = process.env.WEROBOT_BOT_CONFIG_PATH
 if (configPath === undefined) {
@@ -18,7 +18,7 @@ export = (robot: Robot) => {
       labels.push(l.name)
     }
     const issueBody = context.payload.issue.body
-    if (!judge(config.issues, labels, issueBody)) {
+    if (!judge(matchIssueConfig(config.issues, labels), issueBody)) {
       await closeIssue(context)
       return
     }
