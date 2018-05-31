@@ -20,7 +20,7 @@ describe('robot', () => {
     robot.auth = () => Promise.resolve(github)
   })
 
-  describe(('robot deal with issues'), () => {
+  describe('robot deal with issues', () => {
     it('close issue', async () => {
       await robot.receive(payload)
       const params = {
