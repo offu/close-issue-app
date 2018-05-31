@@ -24,7 +24,10 @@ export = (robot: Robot) => {
     }
   })
 }
-
+/**
+ * 评论并关闭对应 issue
+ * @param  {Context} context
+ */
 async function closeIssue (context: Context) {
   const params = {
     owner: context.payload.repository.owner.login,
