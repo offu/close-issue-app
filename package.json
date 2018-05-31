@@ -1,0 +1,62 @@
+{
+  "name": "werobot-bot",
+  "version": "1.0.0",
+  "description": "",
+  "author": "helloqiu <helloqiu95@gmail.com>",
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/offu/werobot-bot.git",
+  "scripts": {
+    "dev": "nodemon -e ts --exec \"tsc && npm run start:probot\"",
+    "build": "rimraf dist && tsc",
+    "start:probot": "probot run ./dist/robot.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "probot": "https://github.com/probot/probot",
+    "typescript": "^2.8.3",
+    "js-yaml": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^1.8.4",
+    "@types/bunyan-format": "^0.2.0",
+    "@types/cache-manager": "^1.2.6",
+    "@types/dotenv": "^4.0.2",
+    "@types/express": "^4.0.39",
+    "@types/jest": "^21.1.8",
+    "@types/js-yaml": "^3.11.1",
+    "@types/jsonwebtoken": "^7.2.5",
+    "@types/nock": "^9.1.0",
+    "@types/node": "^8.5.1",
+    "@types/raven": "^2.1.5",
+    "@types/resolve": "^0.0.4",
+    "@types/semver": "^5.4.0",
+    "@types/supertest": "^2.0.4",
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.2",
+    "rimraf": "^2.6.2",
+    "smee-client": "^1.0.1",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^7.0.0"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.ts", "**/?(*.)+(spec|test).ts"
+    ]
+  }
+}
