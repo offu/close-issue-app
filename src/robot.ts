@@ -3,7 +3,7 @@ import { parseConfig, judge, matchIssueConfig } from './parser'
 
 let configPath = process.env.WEROBOT_BOT_CONFIG_PATH
 if (configPath === undefined) {
-  throw new Error('Can\'t get WEROBOT_BOT_CONFIG_PATH')
+  throw new Error("Can't get WEROBOT_BOT_CONFIG_PATH")
 }
 const config = parseConfig(configPath)
 
