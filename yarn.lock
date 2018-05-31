@@ -130,9 +130,9 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/resolve@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@types/resolve/-/resolve-0.0.4.tgz#9b586d65a947dea88c4bc24da0b905fe9520a0d5"
+"@types/resolve@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@types/resolve/-/resolve-0.0.8.tgz#f26074d238e02659e323ce1a13d041eee280e194"
   dependencies:
     "@types/node" "*"
 
