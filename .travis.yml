@@ -11,3 +11,5 @@ script:
   - yarn test
 cache:
   yarn: true
+env:
+  - WEROBOT_BOT_CONFIG_PATH="./config.example.yml"
