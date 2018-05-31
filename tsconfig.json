@@ -6,7 +6,7 @@
     "strict": true,
     "outDir": "./dist",
     "lib": [
-      "es2015"
+      "es2015", "dom"
     ],
     "noImplicitAny": false // probot hasn't added all types :(
   },
