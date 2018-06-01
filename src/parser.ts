@@ -1,38 +1,7 @@
 import * as yaml from 'js-yaml'
 import * as fs from 'fs'
-import { isArray } from 'util'
+import { Config, isConfig, IssueConfig } from './models'
 
-/** 同一个 label 下包含的内容的配置 */
-export interface MatchConfig {
-  /** 对配置的描述 */
-  description: string,
-  /** 内容 */
-  content: Array<string>
-}
-
-/** 用 label 区分的不同类型的 issue 的配置 */
-export interface IssueConfig {
-  /** 对应的 label */
-  label: string
-  /** 所包含的检查内容和描述 */
-  items: Array<MatchConfig>
-}
-/** 最外层的 Config interface */
-export interface Config {
-  /** 用来记录所有的 issue 相关设置 */
-  issues: Array<IssueConfig>
-  /** 要关闭 github issue 时发的 comment */
-  comment: string
-}
-/**
- * 判断一个对象是不是 Config
- */
-export function isConfig (item: object): item is Config {
-  return (item as Config).issues !== undefined
-  && isArray((item as Config).issues)
-  && (item as Config).issues.length > 0
-  && (item as Config).comment !== undefined
-}
 /**
  * 用来读取配置文件
  */
