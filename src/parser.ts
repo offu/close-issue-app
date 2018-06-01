@@ -27,7 +27,7 @@ export interface Config {
 /**
  * 判断一个对象是不是 Config
  * @param  {object} item - 要判断的对象
- * @returns itemisConfig - 一个判断的对象是 Config 的断言
+ * @returns boolean - 判断的结果
  */
 export function isConfig (item: object): item is Config {
   return (item as Config).issues !== undefined
