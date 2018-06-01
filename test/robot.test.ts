@@ -2,7 +2,7 @@ import { createRobot } from 'probot'
 import { IssuesCreateCommentParams, IssuesEditParams } from '@octokit/rest'
 import * as path from 'path'
 import app = require('../src/robot')
-const payload = require('./fixtures/issues.event.json')
+import payload from './fixtures/issues.event.json'
 
 describe('robot', () => {
   let robot
@@ -13,8 +13,8 @@ describe('robot', () => {
     app(robot)
     github = {
       issues: {
-        createComment: jest.fn().mockReturnValue(() => Promise.resolve(null)),
-        edit: jest.fn().mockReturnValue(() => Promise.resolve(null))
+        createComment: jest.fn().mockResolvedValue(null),
+        edit: jest.fn().mockResolvedValue(null)
       }
     }
     robot.auth = () => Promise.resolve(github)
