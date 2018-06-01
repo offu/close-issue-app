@@ -14,3 +14,5 @@ after_success:
   - codecov
 cache:
   yarn: true
+env:
+  - WEROBOT_BOT_CONFIG_PATH="./config.example.yml"

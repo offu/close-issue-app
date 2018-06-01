@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parser parseConfig 1`] = `
+Object {
+  "comment": "test",
+  "issues": Array [
+    Object {
+      "items": Array [
+        Object {
+          "content": Array [
+            "内容1",
+            "内容2",
+          ],
+          "description": "内容缺失",
+        },
+        Object {
+          "content": Array [
+            "🐶",
+          ],
+          "description": "缺少🐶",
+        },
+      ],
+      "label": "bug",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "content": Array [
+            "🐱",
+          ],
+          "description": "缺少🐱",
+        },
+      ],
+      "label": "Feature Request",
+    },
+  ],
+}
+`;

@@ -1,0 +1,16 @@
+issues:
+  - label: "bug"
+    items:
+      - description: "内容缺失"
+        content:
+          - "内容1"
+          - "内容2"
+      - description: "缺少🐶"
+        content:
+          - "🐶"
+  - label: "Feature Request"
+    items:
+      - description: "缺少🐱"
+        content:
+          - "🐱"
+comment: "test"
