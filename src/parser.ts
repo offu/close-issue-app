@@ -26,8 +26,6 @@ export interface Config {
 }
 /**
  * 判断一个对象是不是 Config
- * @param  {object} item - 要判断的对象
- * @returns boolean - 判断的结果
  */
 export function isConfig (item: object): item is Config {
   return (item as Config).issues !== undefined
@@ -37,8 +35,6 @@ export function isConfig (item: object): item is Config {
 }
 /**
  * 用来读取配置文件
- * @param  {string} path - 配置文件路径
- * @returns Config - 对应的配置对象
  */
 export function parseConfig (path: string): Config {
   const data: yaml.DocumentLoadResult = yaml.safeLoad(fs.readFileSync(path, 'utf-8'))
@@ -49,9 +45,7 @@ export function parseConfig (path: string): Config {
   }
 }
 /**
- * @param  {Array<IssueConfig>} issueConfigArray - 要匹配的 IssueConfig Array
- * @param  {Array<string>} issueLabelArray - 要匹配的 label 的 Array
- * @returns IssueConfig|null - 匹配结果，如果没有返回 null
+ * 根据 label 匹配 IssueConfig
  */
 export function matchIssueConfig (issueConfigArray: Array<IssueConfig>, issueLabelArray: Array<string>): IssueConfig | null {
   let result: IssueConfig | null = null
@@ -67,9 +61,7 @@ export function matchIssueConfig (issueConfigArray: Array<IssueConfig>, issueLab
   return result
 }
 /**
- * @param  {IssueConfig|null} issueConfig - 用来判断的设置
- * @param  {string} content - 检查的内容
- * @returns boolean - 如果 content 中包含了所有的 issueConfig 的 item 则返回 true，否则返回 false
+ * 如果 content 中包含了所有的 issueConfig 的 item 则返回 true，否则返回 false
  */
 export function judge (issueConfig: IssueConfig | null, content: string): boolean {
   if (issueConfig === null) {
