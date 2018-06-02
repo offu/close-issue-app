@@ -27,7 +27,7 @@ export interface Config {
 /**
  * 判断一个 object 是不是 MatchConfig
  */
-export function isMatchConfig (item: object | MatchConfig): item is MatchConfig {
+export function isMatchConfig (item: any): item is MatchConfig {
   if (!('description' in item
   && 'content' in item
   && isString(item.description)
@@ -41,7 +41,7 @@ export function isMatchConfig (item: object | MatchConfig): item is MatchConfig 
 /**
  * 判断一个 object 是不是 IssueConfig
  */
-export function isIssueConfig (item: object | IssueConfig): item is IssueConfig {
+export function isIssueConfig (item: any): item is IssueConfig {
   if (!('label' in item
   && 'items' in item
   && isString(item.label)
@@ -54,7 +54,7 @@ export function isIssueConfig (item: object | IssueConfig): item is IssueConfig 
 /**
  * 判断一个对象是不是 Config
  */
-export function isConfig (item: object | Config): item is Config {
+export function isConfig (item: any): item is Config {
   if (!('comment' in item
   && 'issues' in item
   && isString(item.comment)
@@ -63,5 +63,4 @@ export function isConfig (item: object | Config): item is Config {
     return false
   }
   return item.issues.every(isIssueConfig)
-
 }
