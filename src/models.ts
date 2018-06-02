@@ -35,12 +35,7 @@ export function isMatchConfig (item: object | MatchConfig): item is MatchConfig 
   && item.content.length > 0)) {
     return false
   }
-  for (const i of item.content) {
-    if (!isString(i)) {
-      return false
-    }
-  }
-  return true
+  return item.content.every(isString)
 }
 
 /**
@@ -54,12 +49,7 @@ export function isIssueConfig (item: object | IssueConfig): item is IssueConfig 
   && item.items.length > 0)) {
     return false
   }
-  for (const i of item.items) {
-    if (!isMatchConfig(i)) {
-      return false
-    }
-  }
-  return true
+  return item.items.every(isMatchConfig)
 }
 /**
  * 判断一个对象是不是 Config
@@ -72,11 +62,6 @@ export function isConfig (item: object | Config): item is Config {
   && item.issues.length > 0)) {
     return false
   }
-  for (const i of item.issues) {
-    if (!isIssueConfig(i)) {
-      return false
-    }
-  }
-  return true
+  return item.issues.every(isIssueConfig)
 
 }
