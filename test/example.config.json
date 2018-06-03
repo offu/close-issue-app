@@ -3,32 +3,15 @@
   "issues": [
     {
       "items": [
-        {
-          "content": [
-            "内容1",
-            "内容2"
-          ],
-          "description": "内容缺失"
-        },
-        {
-          "content": [
-            "🐶"
-          ],
-          "description": "缺少🐶"
-        }
-      ],
-      "label": "bug"
+        "内容1",
+        "内容2",
+        "🐶"
+      ]
     },
     {
       "items": [
-        {
-          "content": [
-            "🐱"
-          ],
-          "description": "缺少🐱"
-        }
-      ],
-      "label": "Feature Request"
+        "🐱"
+      ]
     }
   ]
 }

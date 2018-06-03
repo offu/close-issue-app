@@ -1,4 +1,4 @@
-import { isConfig, isIssueConfig, isMatchConfig } from '../src/models'
+import { isConfig, isIssueConfig } from '../src/models'
 import * as path from 'path'
 import exampleConfig from './example.config.json'
 
@@ -17,7 +17,7 @@ describe('models', () => {
     expect(isConfig(wrongExample2)).toBeFalsy()
 
     const rightExample = {
-      issues: [{ label: 'test', items: [{ description: '233', content: ['123'] }] }],
+      issues: [{ items: ['123'] }],
       comment: 'test'
     }
     expect(isConfig(rightExample)).toBeTruthy()
@@ -29,47 +29,10 @@ describe('models', () => {
     const emptyExample = {}
     expect(isIssueConfig(exampleConfig)).toBeFalsy()
 
-    const noItemsExample = { label: 'test' }
-    expect(isIssueConfig(noItemsExample)).toBeFalsy()
-
-    const noLabelExample = { items: [{ description: 'test', content: ['233'] }] }
-    expect(isIssueConfig(noLabelExample)).toBeFalsy()
-
-    const emptyItemsExample = { ...noItemsExample, items: [] }
+    const emptyItemsExample = { items: [] }
     expect(isIssueConfig(emptyItemsExample)).toBeFalsy()
 
-    const wrongItemsExample = { ...noItemsExample, items: [{ description: 'test' }] }
+    const wrongItemsExample = { items: [123] }
     expect(isIssueConfig(wrongItemsExample)).toBeFalsy()
-
-    const wrongLabelExample = { ...noLabelExample, label: 233 }
-    expect(isIssueConfig(wrongLabelExample)).toBeFalsy()
-
-    const rightExample = { ...noItemsExample, ...noLabelExample }
-    expect(isIssueConfig(rightExample)).toBeTruthy()
-  })
-
-  it('isMatchConfig', () => {
-    expect(isMatchConfig(exampleConfig.issues[0].items[0])).toBeTruthy()
-
-    const emptyExample = {}
-    expect(isMatchConfig(emptyExample)).toBeFalsy()
-
-    const noContentExample = { description: 'test' }
-    expect(isMatchConfig(noContentExample)).toBeFalsy()
-
-    const noDescriptionExample = { content: ['233'] }
-    expect(isMatchConfig(noDescriptionExample)).toBeFalsy()
-
-    const emptyContentExample = { ...noContentExample, content: [] }
-    expect(isMatchConfig(emptyContentExample)).toBeFalsy()
-
-    const wrongDescriptionExample = { ...noDescriptionExample, description: 233 }
-    expect(isMatchConfig(wrongDescriptionExample)).toBeFalsy()
-
-    const wrongContentExample = { ...noContentExample, content: ['233', 233] }
-    expect(isMatchConfig(wrongContentExample)).toBeFalsy()
-
-    const rightExample = { ...noContentExample, ...noDescriptionExample }
-    expect(isMatchConfig(rightExample)).toBeTruthy()
   })
 })
