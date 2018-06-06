@@ -19,8 +19,7 @@ export interface Config {
  */
 export function isIssueConfig (item: any): item is IssueConfig {
   if (!('items' in item
-  && isArray(item.items)
-  && item.items.length > 0)) {
+  && isArray(item.items))) {
     return false
   }
   return item.items.every(isString)
@@ -32,8 +31,7 @@ export function isConfig (item: any): item is Config {
   if (!('comment' in item
   && 'issues' in item
   && isString(item.comment)
-  && isArray(item.issues)
-  && item.issues.length > 0)) {
+  && isArray(item.issues))) {
     return false
   }
   return item.issues.every(isIssueConfig)
