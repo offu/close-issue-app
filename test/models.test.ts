@@ -1,39 +1,39 @@
-import { isConfig, isIssueConfig } from '../src/models'
+import { isBotConfig, isIssueConfig } from '../src/models'
 import * as path from 'path'
 import exampleConfig from './example.config.json'
 
-describe('isConfig', () => {
+describe('isBotConfig', () => {
   it('example config', () => {
-    expect(isConfig(exampleConfig)).toBeTruthy()
+    expect(isBotConfig(exampleConfig)).toBeTruthy()
   })
 
   it('empty example', () => {
     const emptyExample = {}
-    expect(isConfig(emptyExample)).toBeFalsy()
+    expect(isBotConfig(emptyExample)).toBeFalsy()
   })
 
   it('empty issues example', () => {
-    const wrongExample1 = { issues: [], comment: 'test' }
-    expect(isConfig(wrongExample1)).toBeTruthy()
+    const wrongExample1 = { issueConfigArray: [], comment: 'test' }
+    expect(isBotConfig(wrongExample1)).toBeTruthy()
   })
 
   it('no issues example', () => {
     const wrongExample2 = { comment: 'test' }
-    expect(isConfig(wrongExample2)).toBeFalsy()
+    expect(isBotConfig(wrongExample2)).toBeFalsy()
   })
 
-  it('wright example', () => {
+  it('right example', () => {
     const rightExample = {
-      issues: [{ items: ['123'] }],
+      issueConfigArray: [{ items: ['123'] }],
       comment: 'test'
     }
-    expect(isConfig(rightExample)).toBeTruthy()
+    expect(isBotConfig(rightExample)).toBeTruthy()
   })
 })
 
 describe('isIssueConfig', () => {
   it('example issue config', () => {
-    expect(isIssueConfig(exampleConfig.issues[0])).toBeTruthy()
+    expect(isIssueConfig(exampleConfig.issueConfigArray[0])).toBeTruthy()
   })
 
   it('no items example', () => {

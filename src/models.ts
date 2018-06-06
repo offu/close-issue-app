@@ -7,9 +7,9 @@ export interface IssueConfig {
 }
 
 /** 最外层的 Config interface */
-export interface Config {
+export interface BotConfig {
   /** 用来记录所有的 issue 相关设置 */
-  issues: Array<IssueConfig>
+  issueConfigArray: Array<IssueConfig>
   /** 要关闭 github issue 时发的 comment */
   comment: string
 }
@@ -27,12 +27,12 @@ export function isIssueConfig (item: any): item is IssueConfig {
 /**
  * 判断一个对象是不是 Config
  */
-export function isConfig (item: any): item is Config {
+export function isBotConfig (item: any): item is BotConfig {
   if (!('comment' in item
-  && 'issues' in item
+  && 'issueConfigArray' in item
   && isString(item.comment)
-  && isArray(item.issues))) {
+  && isArray(item.issueConfigArray))) {
     return false
   }
-  return item.issues.every(isIssueConfig)
+  return item.issueConfigArray.every(isIssueConfig)
 }

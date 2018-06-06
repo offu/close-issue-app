@@ -1,6 +1,6 @@
 {
   "comment": "test",
-  "issues": [
+  "issueConfigArray": [
     {
       "items": [
         "内容1",
