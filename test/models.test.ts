@@ -13,7 +13,7 @@ describe('isBotConfig', () => {
   })
 
   it('empty issues example', () => {
-    const wrongExample1 = { issueConfigArray: [], comment: 'test' }
+    const wrongExample1 = { issueConfigs: [], comment: 'test' }
     expect(isBotConfig(wrongExample1)).toBeTruthy()
   })
 
@@ -24,7 +24,7 @@ describe('isBotConfig', () => {
 
   it('right example', () => {
     const rightExample = {
-      issueConfigArray: [{ items: ['123'] }],
+      issueConfigs: [{ content: ['123'] }],
       comment: 'test'
     }
     expect(isBotConfig(rightExample)).toBeTruthy()
@@ -33,21 +33,21 @@ describe('isBotConfig', () => {
 
 describe('isIssueConfig', () => {
   it('example issue config', () => {
-    expect(isIssueConfig(exampleConfig.issueConfigArray[0])).toBeTruthy()
+    expect(isIssueConfig(exampleConfig.issueConfigs[0])).toBeTruthy()
   })
 
-  it('no items example', () => {
+  it('no content example', () => {
     const emptyExample = {}
     expect(isIssueConfig(exampleConfig)).toBeFalsy()
   })
 
-  it('empty items example', () => {
-    const emptyItemsExample = { items: [] }
+  it('empty content example', () => {
+    const emptyItemsExample = { content: [] }
     expect(isIssueConfig(emptyItemsExample)).toBeTruthy()
   })
 
-  it('wrong items example', () => {
-    const wrongItemsExample = { items: [123] }
+  it('wrong content example', () => {
+    const wrongItemsExample = { content: [123] }
     expect(isIssueConfig(wrongItemsExample)).toBeFalsy()
   })
 })

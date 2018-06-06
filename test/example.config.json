@@ -1,15 +1,15 @@
 {
   "comment": "test",
-  "issueConfigArray": [
+  "issueConfigs": [
     {
-      "items": [
+      "content": [
         "内容1",
         "内容2",
         "🐶"
       ]
     },
     {
-      "items": [
+      "content": [
         "🐱"
       ]
     }
