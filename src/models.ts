@@ -1,21 +1,21 @@
 import { isArray, isString } from 'util'
 
-/** 用于 issue 的配置 */
+/** Config for issue matching. */
 export interface IssueConfig {
-  /** 所包含的检查内容 */
+  /** content to match */
   items: Array<string>
 }
 
-/** 最外层的 Config interface */
+/** Config for the issue bot */
 export interface BotConfig {
-  /** 用来记录所有的 issue 相关设置 */
+  /** One BotConfig can include several IssueConfig for different issues */
   issueConfigArray: Array<IssueConfig>
-  /** 要关闭 github issue 时发的 comment */
+  /** Comment that will be pushed if an issue is judged to be closed */
   comment: string
 }
 
 /**
- * 判断一个 object 是不是 IssueConfig
+ * check something if it is an IssueConfig
  */
 export function isIssueConfig (item: any): item is IssueConfig {
   if (!('items' in item
@@ -25,7 +25,7 @@ export function isIssueConfig (item: any): item is IssueConfig {
   return item.items.every(isString)
 }
 /**
- * 判断一个对象是不是 Config
+ * check something if it is a BotConfig
  */
 export function isBotConfig (item: any): item is BotConfig {
   if (!('comment' in item
