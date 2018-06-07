@@ -1,0 +1,8 @@
+comment: test
+issueConfigs:
+- content:
+  - 内容1
+  - 内容2
+  - "🐶"
+- content:
+  - "🐱"
