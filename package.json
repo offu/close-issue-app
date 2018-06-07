@@ -57,6 +57,9 @@
     },
     "testMatch": [
       "**/__tests__/**/*.ts", "**/?(*.)+(spec|test).ts"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/src/*.ts"
     ]
   }
 }
