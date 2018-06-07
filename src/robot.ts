@@ -12,7 +12,7 @@ const config = parseConfig(configPath)
 export = (robot: Robot) => {
   robot.on('issues.opened', async context => {
     const issueBody = context.payload.issue.body
-    if (!shouldClose(config, issueBody)) {
+    if (shouldClose(config, issueBody)) {
       await createComment(context, config.comment)
       await closeIssue(context)
     }
