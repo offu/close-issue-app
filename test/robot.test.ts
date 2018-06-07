@@ -19,7 +19,10 @@ describe('robot', () => {
         edit: jest.fn().mockResolvedValue(null)
       },
       repos: {
-        getContent: jest.fn().mockResolvedValue(exampleConfig)
+        getContent: jest.fn().mockResolvedValue({ data: {
+          content: exampleConfig,
+          encoding: 'utf-8'
+        }})
       }
     }
     robot.auth = () => Promise.resolve(github)
@@ -38,7 +41,7 @@ describe('robot', () => {
       const getContentParams: ReposGetContentParams = {
         owner: 'baxterthehacker',
         repo: 'public-repo',
-        path: '/issue.bot.yml.raw'
+        path: '/issue.bot.yml'
       }
       expect(github.issues.createComment).toHaveBeenCalledWith(createCommentParams)
       expect(github.issues.edit).toHaveBeenCalledWith(editIssueParams)
