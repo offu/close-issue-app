@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseConfig right example 1`] = `
+Object {
+  "comment": "test",
+  "issueConfigs": Array [
+    Object {
+      "content": Array [
+        "内容1",
+        "内容2",
+        "🐶",
+      ],
+    },
+    Object {
+      "content": Array [
+        "🐱",
+      ],
+    },
+  ],
+}
+`;
