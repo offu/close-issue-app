@@ -1,4 +1,4 @@
-import { parseConfig, judge } from '../src/parser'
+import { parseConfig, shouldClose } from '../src/parser'
 import * as path from 'path'
 
 describe('parseConfig', () => {
@@ -13,17 +13,17 @@ describe('parseConfig', () => {
   })
 })
 
-describe('judge', () => {
+describe('shouldClose', () => {
   const exampleConfig = parseConfig(path.resolve(__dirname, '../example.config.yml'))
   it('right content', () => {
     const rightContent1 = '🐱'
-    expect(judge(exampleConfig, rightContent1)).toBeTruthy()
+    expect(shouldClose(exampleConfig, rightContent1)).toBeTruthy()
 
     const rightContent2 = '内容1内容2🐶'
-    expect(judge(exampleConfig, rightContent2)).toBeTruthy()
+    expect(shouldClose(exampleConfig, rightContent2)).toBeTruthy()
   })
   it('wrong content', () => {
     const wrongContent = '123'
-    expect(judge(exampleConfig, wrongContent)).toBeFalsy()
+    expect(shouldClose(exampleConfig, wrongContent)).toBeFalsy()
   })
 })
