@@ -15,7 +15,7 @@ export function parseConfig (path: string): BotConfig {
 }
 
 export function shouldClose (botConfig: BotConfig, content: string): boolean {
-  return botConfig.issueConfigs.some((issueConfig) => {
+  return !botConfig.issueConfigs.some((issueConfig) => {
     return issueConfig.content.every((issueContent) => {
       return content.includes(issueContent)
     })
