@@ -13,3 +13,11 @@ export function parseConfig (path: string): BotConfig {
     return data
   }
 }
+
+export function judge (botConfig: BotConfig, content: string): boolean {
+  return botConfig.issueConfigs.some((issueConfig) => {
+    return issueConfig.content.every((issueContent) => {
+      return content.includes(issueContent)
+    })
+  })
+}
