@@ -41,7 +41,7 @@ describe('robot', () => {
       const getContentParams: ReposGetContentParams = {
         owner: 'baxterthehacker',
         repo: 'public-repo',
-        path: '/issue.bot.yml'
+        path: '/.github/issue-close-bot.yml'
       }
       expect(github.issues.createComment).toHaveBeenCalledWith(createCommentParams)
       expect(github.issues.edit).toHaveBeenCalledWith(editIssueParams)
