@@ -15,4 +15,4 @@ after_success:
 cache:
   yarn: true
 env:
-  - WEROBOT_BOT_CONFIG_PATH="./config.example.yml"
+  - WEROBOT_BOT_CONFIG_PATH="./example.config.yml"
