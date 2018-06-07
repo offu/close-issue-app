@@ -4,7 +4,7 @@ import { closeIssue, createComment, getContent } from './api'
 import { isString } from 'util'
 
 export = (robot: Robot) => {
-  robot.on('issues.opened', async context => {
+  robot.on(['issues.opened', 'issues.reopened'], async context => {
     const remoteConfig = await getContent(context, '/issue.bot.yml')
     if (!isString(remoteConfig)) {
       throw Error(`remote config is not a string:\n${remoteConfig}`)
