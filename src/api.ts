@@ -1,4 +1,5 @@
 import { Context } from 'probot'
+import { Buffer } from 'buffer'
 
 export async function closeIssue (context: Context) {
   const params = {
@@ -29,8 +30,9 @@ export async function getContent (context: Context, path: string) {
     owner: context.payload.repository.owner.login,
     repo: context.payload.repository.name
   }
-  return context.github.repos.getContent({
-    path: `${path}.raw`,
+  const resp = await context.github.repos.getContent({
+    path,
     ...params
   })
+  return Buffer.from(resp.data.content, resp.data.encoding).toString('utf-8')
 }
