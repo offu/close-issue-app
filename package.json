@@ -8,8 +8,9 @@
   "scripts": {
     "dev": "nodemon -e ts --exec \"tsc && npm run start:probot\"",
     "build": "rimraf dist && tsc",
-    "start:probot": "probot run ./dist/robot.js",
-    "test": "npm run build && jest --coverage"
+    "start": "probot run ./dist/robot.js",
+    "test": "npm run build && jest --coverage",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "js-yaml": "3.12.0",
