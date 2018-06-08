@@ -6,10 +6,10 @@
   "license": "AGPL-3.0-or-later",
   "repository": "https://github.com/offu/werobot-bot.git",
   "scripts": {
-    "dev": "nodemon -e ts --exec \"tsc && npm run start:probot\"",
+    "dev": "nodemon -e ts --exec \"tsc && npm run start\"",
     "build": "rimraf dist && tsc",
     "start": "probot run ./dist/robot.js",
-    "test": "npm run build && jest --coverage",
+    "test": "jest --coverage",
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
