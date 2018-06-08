@@ -1,6 +1,6 @@
 # Close Issue Bot
-[![Build Status](https://travis-ci.org/offu/werobot-bot.svg?branch=master)](https://travis-ci.org/offu/werobot-bot)
-[![codecov](https://codecov.io/gh/offu/werobot-bot/branch/master/graph/badge.svg)](https://codecov.io/gh/offu/werobot-bot)  
+[![Build Status](https://travis-ci.org/offu/close-issue-bot.svg?branch=master)](https://travis-ci.org/offu/close-issue-bot)
+[![codecov](https://codecov.io/gh/offu/close-issue-bot/branch/master/graph/badge.svg)](https://codecov.io/gh/offu/close-issue-bot)  
 A bot to close issues.
 ## Getting Started
 ### Installing
