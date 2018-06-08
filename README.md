@@ -39,9 +39,9 @@ Any issue that doesn't include all contents in the same issueConfig will be clos
 Before running this bot, please read [probot docs](https://probot.github.io/docs/development/) first.
 After finshing all things mentioned in the doc:
 ```bash
-yarn start:probot
+yarn start
 # Or
-npm run start:probot
+npm run start
 ```
 ### Deployment
 Read [probot docs](https://probot.github.io/docs/deployment/).
