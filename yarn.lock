@@ -91,9 +91,9 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/jest@23.0.0":
-  version "23.0.0"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.0.0.tgz#760cac74f00bb9c3075587716d2b3b4435663bc0"
+"@types/jest@23.0.1":
+  version "23.0.1"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.0.1.tgz#c60dbed0bac210343d5dd0413744d6c8d0afac47"
 
 "@types/js-yaml@3.11.1":
   version "3.11.1"
