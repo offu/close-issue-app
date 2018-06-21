@@ -1,7 +1,7 @@
-# Close Issue Bot
-[![Build Status](https://travis-ci.org/offu/close-issue-bot.svg?branch=master)](https://travis-ci.org/offu/close-issue-bot)
-[![codecov](https://codecov.io/gh/offu/close-issue-bot/branch/master/graph/badge.svg)](https://codecov.io/gh/offu/close-issue-bot)  
-A bot to close issues.
+# Close Issue App
+[![Build Status](https://travis-ci.org/offu/close-issue-app.svg?branch=master)](https://travis-ci.org/offu/close-issue-app)
+[![codecov](https://codecov.io/gh/offu/close-issue-app/branch/master/graph/badge.svg)](https://codecov.io/gh/offu/close-issue-app)  
+An app to close issues.
 ## Getting Started
 ### Installing
 If you use **yarn**:
@@ -36,7 +36,7 @@ issueConfigs:
 ```
 Any issue that doesn't include all contents in the same issueConfig will be closed.
 ### Run
-Before running this bot, please read [probot docs](https://probot.github.io/docs/development/) first.
+Before running this app, please read [probot docs](https://probot.github.io/docs/development/) first.
 After finshing all things mentioned in the doc:
 ```bash
 yarn start
