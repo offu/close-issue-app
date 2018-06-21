@@ -21,7 +21,7 @@ yarn build
 npm run build
 ```
 ### Configuration
-Any repo that installs this app needs to put a configuration in ```/.github/issue-close-bot.yml```. There's an example in ```example.config.yml```:
+Any repo that installs this app needs to put a configuration in `/.github/issue-close-app.yml`. There's an example in `example.config.yml`:
 ``` yaml
 # Comment that will be sent if an issue is judged to be closed
 comment: test
