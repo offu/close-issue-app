@@ -38,7 +38,7 @@
     "smee-client": "1.0.1",
     "ts-jest": "22.4.6",
     "tslint": "5.10.0",
-    "tslint-config-standard": "7.0.0"
+    "tslint-config-standard": "7.1.0"
   },
   "engines": {
     "node": ">= 8.3.0"
