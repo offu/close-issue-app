@@ -1,0 +1,14 @@
+comment: "Please refer to our issue template. ☺"
+issueConfigs:
+- content:
+  - "Describe the bug"
+  - "To Reproduce"
+  - "Expected behavior"
+  - "Screenshots"
+  - "Environment"
+  - "Additional context"
+- content:
+  - "Is your feature request related to a problem? Please describe."
+  - "Describe the solution you'd like"
+  - "Describe alternatives you've considered"
+  - "Additional context"
