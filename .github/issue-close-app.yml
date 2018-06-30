@@ -4,8 +4,6 @@ issueConfigs:
   - "Describe the bug"
   - "To Reproduce"
   - "Expected behavior"
-  - "Screenshots"
-  - "Environment"
   - "Additional context"
 - content:
   - "Is your feature request related to a problem? Please describe."
