@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "js-yaml": "3.12.0",
-    "probot": "https://github.com/probot/probot",
+    "probot": "7.0.0",
     "typescript": "2.9.2"
   },
   "devDependencies": {

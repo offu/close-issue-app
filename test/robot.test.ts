@@ -1,4 +1,4 @@
-import { createRobot } from 'probot'
+import { Application } from 'probot'
 import { IssuesCreateCommentParams, IssuesEditParams, ReposGetContentParams } from '@octokit/rest'
 import * as path from 'path'
 import * as fs from 'fs'
@@ -11,8 +11,8 @@ describe('robot', () => {
   const exampleConfig = fs.readFileSync(path.resolve(__dirname, '../example.config.yml'), 'utf-8')
 
   beforeEach(() => {
-    robot = createRobot(null)
-    app(robot)
+    robot = new Application()
+    robot.load(app)
     github = {
       issues: {
         createComment: jest.fn().mockResolvedValue(null),
