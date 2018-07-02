@@ -1,4 +1,4 @@
-import { isArray, isString } from 'util'
+import { isArray, isString, isObject } from 'util'
 
 /** Config for issue matching. */
 export interface IssueConfig {
@@ -28,7 +28,8 @@ export function isIssueConfig (item: any): item is IssueConfig {
  * check something if it is a BotConfig
  */
 export function isBotConfig (item: any): item is BotConfig {
-  if (!('comment' in item
+  if (!(isObject(item)
+  && 'comment' in item
   && 'issueConfigs' in item
   && isString(item.comment)
   && isArray(item.issueConfigs))) {
@@ -36,3 +37,6 @@ export function isBotConfig (item: any): item is BotConfig {
   }
   return item.issueConfigs.every(isIssueConfig)
 }
+
+const defaultErrorComment: string = 'The app gets an error. :('
+export { defaultErrorComment }

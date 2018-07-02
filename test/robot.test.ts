@@ -3,6 +3,7 @@ import { IssuesCreateCommentParams, IssuesEditParams, ReposGetContentParams } fr
 import * as path from 'path'
 import * as fs from 'fs'
 import app = require('../src/robot')
+import { defaultErrorComment } from '../src/models'
 import payload from './fixtures/issues.event.json'
 
 describe('robot', () => {
@@ -46,6 +47,24 @@ describe('robot', () => {
       expect(github.issues.createComment).toHaveBeenCalledWith(createCommentParams)
       expect(github.issues.edit).toHaveBeenCalledWith(editIssueParams)
       expect(github.repos.getContent).toHaveBeenCalledWith(getContentParams)
+    })
+
+    it('get error', async () => {
+      // Setup a new github to return an invalid config
+      github.repos.getContent = jest.fn().mockResolvedValue({ data: {
+        content: '233',
+        encoding: 'utf-8'
+      }})
+      robot.auth = () => Promise.resolve(github)
+
+      await expect(robot.receive(payload)).rejects.toThrowError('invalid config')
+      const errorCommentParams: IssuesCreateCommentParams = {
+        owner: 'baxterthehacker',
+        repo: 'public-repo',
+        number: 2,
+        body: defaultErrorComment
+      }
+      expect(github.issues.createComment).toHaveBeenCalledWith(errorCommentParams)
     })
   })
 })
