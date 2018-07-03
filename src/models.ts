@@ -1,5 +1,3 @@
-import { isString } from 'util'
-
 /** Config for issue matching. */
 export interface IssueConfig {
   /** content to match */
@@ -22,7 +20,9 @@ export function isIssueConfig (item: any): item is IssueConfig {
   && Array.isArray(item.content))) {
     return false
   }
-  return item.content.every(isString)
+  return item.content.every((i) => {
+    return typeof i === 'string'
+  })
 }
 /**
  * check something if it is a BotConfig
@@ -32,7 +32,7 @@ export function isBotConfig (item: any): item is BotConfig {
   && typeof item === 'object'
   && 'comment' in item
   && 'issueConfigs' in item
-  && isString(item.comment)
+  && typeof item.comment === 'string'
   && Array.isArray(item.issueConfigs))) {
     return false
   }
