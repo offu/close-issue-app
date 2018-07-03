@@ -1,4 +1,4 @@
-import { isArray, isString, isObject } from 'util'
+import { isString } from 'util'
 
 /** Config for issue matching. */
 export interface IssueConfig {
@@ -19,7 +19,7 @@ export interface BotConfig {
  */
 export function isIssueConfig (item: any): item is IssueConfig {
   if (!('content' in item
-  && isArray(item.content))) {
+  && Array.isArray(item.content))) {
     return false
   }
   return item.content.every(isString)
@@ -28,11 +28,12 @@ export function isIssueConfig (item: any): item is IssueConfig {
  * check something if it is a BotConfig
  */
 export function isBotConfig (item: any): item is BotConfig {
-  if (!(isObject(item)
+  if (!(item !== null
+  && typeof item === 'object'
   && 'comment' in item
   && 'issueConfigs' in item
   && isString(item.comment)
-  && isArray(item.issueConfigs))) {
+  && Array.isArray(item.issueConfigs))) {
     return false
   }
   return item.issueConfigs.every(isIssueConfig)
