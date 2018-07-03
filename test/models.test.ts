@@ -12,6 +12,11 @@ describe('isBotConfig', () => {
     expect(isBotConfig(emptyExample)).toBeFalsy()
   })
 
+  it('null example', () => {
+    const nullExample = null
+    expect(isBotConfig(nullExample)).toBeFalsy()
+  })
+
   it('empty issues example', () => {
     const wrongExample1 = { issueConfigs: [], comment: 'test' }
     expect(isBotConfig(wrongExample1)).toBeTruthy()

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`robot robot deal with issues get error 1`] = `
+Object {
+  "number": 2,
+  "owner": "baxterthehacker",
+  "repo": "public-repo",
+}
+`;
+
+exports[`robot robot deal with issues invalid issue 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "body": "test",
+        "number": 2,
+        "owner": "baxterthehacker",
+        "repo": "public-repo",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": Promise {},
+    },
+  ],
+}
+`;
+
+exports[`robot robot deal with issues invalid issue 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "number": 2,
+        "owner": "baxterthehacker",
+        "repo": "public-repo",
+        "state": "closed",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": Promise {},
+    },
+  ],
+}
+`;
+
+exports[`robot robot deal with issues invalid issue 3`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "owner": "baxterthehacker",
+        "path": "/.github/issue-close-app.yml",
+        "repo": "public-repo",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": Promise {},
+    },
+  ],
+}
+`;
