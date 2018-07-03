@@ -62,7 +62,7 @@ describe('robot', () => {
         owner: 'baxterthehacker',
         repo: 'public-repo',
         number: 2,
-        body: defaultErrorComment
+        body: `${defaultErrorComment}\n\`\`\` log\ninvalid config\n\`\`\``
       }
       expect(github.issues.createComment).toHaveBeenCalledWith(errorCommentParams)
     })

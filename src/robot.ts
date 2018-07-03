@@ -19,7 +19,7 @@ export = (robot: Application) => {
         await closeIssue(context)
       }
     } catch (e) {
-      await createComment(context, defaultErrorComment)
+      await createComment(context, `${defaultErrorComment}\n\`\`\` log\n${e.message}\n\`\`\``)
       throw e
     }
   })
