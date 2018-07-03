@@ -38,5 +38,4 @@ export function isBotConfig (item: any): item is BotConfig {
   return item.issueConfigs.every(isIssueConfig)
 }
 
-const defaultErrorComment: string = 'The app gets an error. :('
-export { defaultErrorComment }
+export const errorComment: string = 'The app gets an error. :('

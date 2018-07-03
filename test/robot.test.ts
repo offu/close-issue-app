@@ -3,7 +3,7 @@ import { IssuesCreateCommentParams, IssuesEditParams, ReposGetContentParams } fr
 import * as path from 'path'
 import * as fs from 'fs'
 import app = require('../src/robot')
-import { defaultErrorComment } from '../src/models'
+import { errorComment } from '../src/models'
 import payload from './fixtures/issues.event.json'
 
 describe('robot', () => {
@@ -62,7 +62,7 @@ describe('robot', () => {
         owner: 'baxterthehacker',
         repo: 'public-repo',
         number: 2,
-        body: `${defaultErrorComment}\n\`\`\` log\ninvalid config\n\`\`\``
+        body: `${errorComment}\n\`\`\` log\ninvalid config\n\`\`\``
       }
       expect(github.issues.createComment).toHaveBeenCalledWith(errorCommentParams)
     })

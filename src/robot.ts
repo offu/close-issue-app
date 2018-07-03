@@ -1,7 +1,7 @@
 import { Application } from 'probot'
 import { parseConfig, shouldClose } from './parser'
 import { closeIssue, createComment, getContent } from './api'
-import { defaultErrorComment } from './models'
+import { errorComment } from './models'
 import { isString } from 'util'
 
 export = (robot: Application) => {
@@ -19,7 +19,7 @@ export = (robot: Application) => {
         await closeIssue(context)
       }
     } catch (e) {
-      await createComment(context, `${defaultErrorComment}\n\`\`\` log\n${e.message}\n\`\`\``)
+      await createComment(context, `${errorComment}\n\`\`\` log\n${e.message}\n\`\`\``)
       throw e
     }
   })
