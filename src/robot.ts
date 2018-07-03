@@ -20,6 +20,7 @@ export = (robot: Application) => {
     } catch (e) {
       await createComment(context, `${errorComment}
       \`\`\` log
+      ${e.message}
       ${e.stack}
       \`\`\``)
       throw e
