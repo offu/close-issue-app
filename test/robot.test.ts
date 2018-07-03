@@ -58,13 +58,11 @@ describe('robot', () => {
       robot.auth = () => Promise.resolve(github)
 
       await expect(robot.receive(payload)).rejects.toThrowError('invalid config')
-      const errorCommentParams: IssuesCreateCommentParams = {
-        owner: 'baxterthehacker',
-        repo: 'public-repo',
-        number: 2,
-        body: `${errorComment}\n\`\`\` log\ninvalid config\n\`\`\``
-      }
-      expect(github.issues.createComment).toHaveBeenCalledWith(errorCommentParams)
+      const createCommentParams = github.issues.createComment.mock.calls[0][0]
+      const body = createCommentParams.body
+      delete createCommentParams.body
+      expect(createCommentParams).toMatchSnapshot()
+      expect(body).toMatch(/The app gets an error\. \:\(.*/)
     })
   })
 })

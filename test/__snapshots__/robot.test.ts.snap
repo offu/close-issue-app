@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`robot robot deal with issues get error 1`] = `
+Object {
+  "number": 2,
+  "owner": "baxterthehacker",
+  "repo": "public-repo",
+}
+`;

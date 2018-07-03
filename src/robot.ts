@@ -18,7 +18,10 @@ export = (robot: Application) => {
         await closeIssue(context)
       }
     } catch (e) {
-      await createComment(context, `${errorComment}\n\`\`\` log\n${e.message}\n\`\`\``)
+      await createComment(context, `${errorComment}
+      \`\`\` log
+      ${e.stack}
+      \`\`\``)
       throw e
     }
   })
