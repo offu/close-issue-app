@@ -16,9 +16,9 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@octokit/rest@^15.6.0":
-  version "15.8.1"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-15.8.1.tgz#8bcdece90026d3af5edd73bd49a8732cb3801d29"
+"@octokit/rest@^15.9.4":
+  version "15.9.4"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-15.9.4.tgz#c6cf0f483275d9c798b18419b7c9d417493bb70f"
   dependencies:
     before-after-hook "^1.1.0"
     btoa-lite "^1.0.0"
@@ -3531,11 +3531,11 @@ private@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
 
-probot@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/probot/-/probot-7.0.0.tgz#54c54263d50dc0b5953c57fbccc5d8dd21c97f8c"
+probot@7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/probot/-/probot-7.0.1.tgz#8ee68e0f39b25b840243c7a8b9ae1ce7641fb403"
   dependencies:
-    "@octokit/rest" "^15.6.0"
+    "@octokit/rest" "^15.9.4"
     "@octokit/webhooks" "^3.1.1"
     bottleneck "^2.4.0"
     bunyan "^1.8.12"
