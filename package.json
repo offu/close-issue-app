@@ -32,7 +32,7 @@
     "@types/resolve": "0.0.8",
     "@types/semver": "5.5.0",
     "@types/supertest": "2.0.5",
-    "jest": "23.3.0",
+    "jest": "23.4.1",
     "nodemon": "1.18.2",
     "rimraf": "2.6.2",
     "smee-client": "1.0.2",
