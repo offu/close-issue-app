@@ -33,7 +33,7 @@
     "@types/semver": "5.5.0",
     "@types/supertest": "2.0.5",
     "jest": "23.3.0",
-    "nodemon": "1.17.5",
+    "nodemon": "1.18.2",
     "rimraf": "2.6.2",
     "smee-client": "1.0.2",
     "ts-jest": "23.0.0",
