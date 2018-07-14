@@ -31,7 +31,7 @@
     "@types/raven": "2.5.1",
     "@types/resolve": "0.0.8",
     "@types/semver": "5.5.0",
-    "@types/supertest": "2.0.4",
+    "@types/supertest": "2.0.5",
     "jest": "23.3.0",
     "nodemon": "1.17.5",
     "rimraf": "2.6.2",
