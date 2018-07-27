@@ -16,7 +16,11 @@ export function parseConfig (content: string): BotConfig {
 export function shouldClose (botConfig: BotConfig, content: string): boolean {
   return !botConfig.issueConfigs.some((issueConfig) => {
     return issueConfig.content.every((issueContent) => {
-      return content.includes(issueContent)
+      if (botConfig.caseSensitive) {
+        return content.includes(issueContent)
+      } else {
+        return content.toLowerCase().includes(issueContent.toLowerCase())
+      }
     })
   })
 }

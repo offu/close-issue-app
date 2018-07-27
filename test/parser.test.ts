@@ -27,6 +27,17 @@ describe('shouldClose', () => {
     const rightContent2 = '内容1内容2🐶'
     expect(shouldClose(exampleConfig, rightContent2)).toBeFalsy()
   })
+  it('right content case-sensitive', () => {
+    const exampleConfig = parseConfig(fs.readFileSync(path.resolve(__dirname, '../example.config.yml'), 'utf-8'))
+    exampleConfig.issueConfigs = [{ 'content': ['TEST'] }]
+    expect(shouldClose(exampleConfig, 'test')).toBeTruthy()
+  })
+  it('right content case-insensitive', () => {
+    const exampleConfig = parseConfig(fs.readFileSync(path.resolve(__dirname, '../example.config.yml'), 'utf-8'))
+    exampleConfig.issueConfigs = [{ 'content': ['TEST'] }]
+    exampleConfig.caseSensitive = false
+    expect(shouldClose(exampleConfig, 'test')).toBeFalsy()
+  })
   it('wrong content', () => {
     const wrongContent = '123'
     expect(shouldClose(exampleConfig, wrongContent)).toBeTruthy()
