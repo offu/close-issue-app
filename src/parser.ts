@@ -1,5 +1,5 @@
 import * as yaml from 'js-yaml'
-import { BotConfig, isBotConfig } from './models'
+import { BotConfig, isBotConfig, botConfigFactory } from './models'
 
 /**
  * Parse the file according to the path into BotConfig
@@ -9,7 +9,7 @@ export function parseConfig (content: string): BotConfig {
   if (!isBotConfig(data)) {
     throw new Error('invalid config')
   } else {
-    return data
+    return botConfigFactory(data)
   }
 }
 

@@ -3,8 +3,12 @@ import * as path from 'path'
 import * as fs from 'fs'
 
 describe('parseConfig', () => {
-  it('right example', () => {
+  it('right example without default values', () => {
     const exampleConfig = parseConfig(fs.readFileSync(path.resolve(__dirname, '../example.config.yml'), 'utf-8'))
+    expect(exampleConfig).toMatchSnapshot()
+  })
+  it('right example with default values', () => {
+    const exampleConfig = parseConfig(fs.readFileSync(path.resolve(__dirname, './example.with.default.value.config.yml'), 'utf-8'))
     expect(exampleConfig).toMatchSnapshot()
   })
   it('no issueConfigs', () => {
