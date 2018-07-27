@@ -1,4 +1,4 @@
-import { isBotConfig, isIssueConfig } from '../src/models'
+import { isBotConfig, isIssueConfig, botConfigFactory } from '../src/models'
 import * as path from 'path'
 import exampleConfig from './example.config.json'
 
@@ -27,10 +27,19 @@ describe('isBotConfig', () => {
     expect(isBotConfig(wrongExample2)).toBeFalsy()
   })
 
-  it('right example', () => {
+  it('right example without caseSensitive', () => {
     const rightExample = {
       issueConfigs: [{ content: ['123'] }],
       comment: 'test'
+    }
+    expect(isBotConfig(rightExample)).toBeTruthy()
+  })
+
+  it('right example with caseSensitive', () => {
+    const rightExample = {
+      issueConfigs: [{ content: ['123'] }],
+      comment: 'test',
+      caseSensitive: true
     }
     expect(isBotConfig(rightExample)).toBeTruthy()
   })
@@ -54,5 +63,23 @@ describe('isIssueConfig', () => {
   it('wrong content example', () => {
     const wrongItemsExample = { content: [123] }
     expect(isIssueConfig(wrongItemsExample)).toBeFalsy()
+  })
+})
+
+describe('botConfigFactory', () => {
+  it('config without caseSensitive', () => {
+    const exampleWithoutCase = {
+      issueConfigs: [{ content: ['123'] }],
+      comment: 'test'
+    }
+    expect(botConfigFactory(exampleWithoutCase)).toMatchSnapshot()
+  })
+  it('config with caseSensitive', () => {
+    const exampleWithCase = {
+      issueConfigs: [{ content: ['123'] }],
+      comment: 'test',
+      caseSensitive: false
+    }
+    expect(botConfigFactory(exampleWithCase)).toMatchSnapshot()
   })
 })

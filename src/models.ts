@@ -9,7 +9,9 @@ export interface BotConfig {
   /** One BotConfig can include several IssueConfig for different issues */
   issueConfigs: Array<IssueConfig>
   /** Comment that will be sent if an issue is judged to be closed */
-  comment: string
+  comment: string,
+  /** whether the keywords are case-sensitive */
+  caseSensitive?: boolean
 }
 
 /**
@@ -37,6 +39,15 @@ export function isBotConfig (item: any): item is BotConfig {
     return false
   }
   return item.issueConfigs.every(isIssueConfig)
+}
+/**
+ * inject default values into config
+ */
+export function botConfigFactory (config: BotConfig): BotConfig {
+  if (!('caseSensitive' in config)) {
+    config.caseSensitive = true
+  }
+  return config
 }
 
 export const errorComment: string = 'The app gets an error. :('
