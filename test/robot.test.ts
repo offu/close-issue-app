@@ -31,7 +31,7 @@ describe('robot', () => {
   describe('robot config', () => {
     it('without default config', async () => {
       const noDefaultConfig = yaml.safeLoad(exampleConfig)
-      noDefaultConfig.caseSensitive = false
+      noDefaultConfig.caseInsensitive = true
       noDefaultConfig.issueConfigs = [{ 'content': ['TEST'] }]
       github = {
         issues: {

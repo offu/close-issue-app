@@ -35,7 +35,7 @@ describe('shouldClose', () => {
   it('right content case-insensitive', () => {
     const exampleConfig = parseConfig(fs.readFileSync(path.resolve(__dirname, '../example.config.yml'), 'utf-8'))
     exampleConfig.issueConfigs = [{ 'content': ['TEST'] }]
-    exampleConfig.caseSensitive = false
+    exampleConfig.caseInsensitive = true
     expect(shouldClose(exampleConfig, 'test')).toBeFalsy()
   })
   it('wrong content', () => {

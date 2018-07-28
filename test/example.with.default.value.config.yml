@@ -6,4 +6,4 @@ issueConfigs:
   - "🐶"
 - content:
   - "🐱"
-caseSensitive: false
+caseInsensitive: true

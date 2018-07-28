@@ -2,7 +2,7 @@
 
 exports[`parseConfig right example with default values 1`] = `
 Object {
-  "caseSensitive": false,
+  "caseInsensitive": true,
   "comment": "test",
   "issueConfigs": Array [
     Object {
@@ -23,7 +23,6 @@ Object {
 
 exports[`parseConfig right example without default values 1`] = `
 Object {
-  "caseSensitive": true,
   "comment": "test",
   "issueConfigs": Array [
     Object {

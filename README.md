@@ -22,9 +22,11 @@ issueConfigs:
   - "Motivation / Use Case"
   - "Expected Behavior"
   - "Other Information"
-# whether the keywords are case-sensitive
-# default value is true
-caseSensitive: true
+# Optional configuration:
+#
+# whether the keywords are case-insensitive
+# default value is false, which means keywords are case-sensitive
+caseInsensitive: false
 # The issue is judged to be legal if it includes all keywords from any of these two configs.
 # Or it will be closed by the app.
 ```
