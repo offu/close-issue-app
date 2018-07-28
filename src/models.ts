@@ -9,7 +9,9 @@ export interface BotConfig {
   /** One BotConfig can include several IssueConfig for different issues */
   issueConfigs: Array<IssueConfig>
   /** Comment that will be sent if an issue is judged to be closed */
-  comment: string
+  comment: string,
+  /** whether the keywords are case-sensitive */
+  caseInsensitive?: boolean
 }
 
 /**

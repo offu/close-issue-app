@@ -22,10 +22,15 @@ issueConfigs:
   - "Motivation / Use Case"
   - "Expected Behavior"
   - "Other Information"
+# Optional configuration:
+#
+# whether the keywords are case-insensitive
+# default value is false, which means keywords are case-sensitive
+caseInsensitive: false
 # The issue is judged to be legal if it includes all keywords from any of these two configs.
 # Or it will be closed by the app.
 ```
-The config file is **required** to run this app. And there is no **default config**. If the app can not find a valid config file, it will ignore requests from the repo.  
+The config file is **required** to run this app. If the app can not find a valid config file, it will ignore requests from the repo.  
 2. Install the [close-issue-app](https://github.com/apps/close-issue-app).  
 3. Enjoy!
 

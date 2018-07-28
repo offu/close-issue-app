@@ -3,6 +3,7 @@ import * as path from 'path'
 import * as fs from 'fs'
 import app = require('../src/robot')
 import payload from './fixtures/issues.event.json'
+import * as yaml from 'js-yaml'
 
 describe('robot', () => {
   let robot
@@ -25,6 +26,33 @@ describe('robot', () => {
       }
     }
     robot.auth = () => Promise.resolve(github)
+  })
+
+  describe('robot config', () => {
+    it('without default config', async () => {
+      const noDefaultConfig = yaml.safeLoad(exampleConfig)
+      noDefaultConfig.caseInsensitive = true
+      noDefaultConfig.issueConfigs = [{ 'content': ['TEST'] }]
+      github = {
+        issues: {
+          createComment: jest.fn().mockResolvedValue(null),
+          edit: jest.fn().mockResolvedValue(null)
+        },
+        repos: {
+          getContent: jest.fn().mockResolvedValue({ data: {
+            content: yaml.safeDump(noDefaultConfig),
+            encoding: 'utf-8'
+          }})
+        }
+      }
+      robot.auth = () => Promise.resolve(github)
+      const lowerPayload = Object.assign({}, payload)
+      lowerPayload.payload.issue.body = 'test'
+      await robot.receive(payload)
+      expect(github.issues.createComment).toMatchSnapshot()
+      expect(github.issues.edit).toMatchSnapshot()
+      expect(github.repos.getContent).toMatchSnapshot()
+    })
   })
 
   describe('robot deal with issues', () => {

@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`robot robot config without default config 1`] = `[MockFunction]`;
+
+exports[`robot robot config without default config 2`] = `[MockFunction]`;
+
+exports[`robot robot config without default config 3`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "owner": "baxterthehacker",
+        "path": "/.github/issue-close-app.yml",
+        "repo": "public-repo",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": Promise {},
+    },
+  ],
+}
+`;
+
 exports[`robot robot deal with issues get error 1`] = `
 Object {
   "number": 2,
