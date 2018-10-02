@@ -27,7 +27,7 @@
     "@types/js-yaml": "3.11.2",
     "@types/jsonwebtoken": "7.2.8",
     "@types/nock": "9.3.0",
-    "@types/node": "8.10.31",
+    "@types/node": "8.10.32",
     "@types/raven": "2.5.1",
     "@types/resolve": "0.0.8",
     "@types/semver": "5.5.0",
