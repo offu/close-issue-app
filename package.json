@@ -18,7 +18,7 @@
     "typescript": "3.1.1"
   },
   "devDependencies": {
-    "@types/bunyan": "1.8.4",
+    "@types/bunyan": "1.8.5",
     "@types/bunyan-format": "0.2.0",
     "@types/cache-manager": "1.2.6",
     "@types/dotenv": "4.0.3",
