@@ -137,10 +137,10 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-10.1.4.tgz#606651d3f8a8bec08b8cb262161aab9209f4a29d"
   integrity sha512-GpQxofkdlHYxjHad98UUdNoMO7JrmzQZoAaghtNg14Gwg7YkohcrCoJEcEMSgllx4VIZ+mYw7ZHjfaeIagP/rg==
 
-"@types/node@8.10.35":
-  version "8.10.35"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.35.tgz#b24cc302d534177f7e4cb589e48fdc5ab6b907c4"
-  integrity sha512-kD1uIxy8hqpV34slD0giWLJEdSv4XGWID4OfmqPp0Z/+75z/+0stFmgkvbSRexgZWmN52YyF8mmBx87ZEAih6g==
+"@types/node@8.10.36":
+  version "8.10.36"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.36.tgz#eac05d576fbcd0b4ea3c912dc58c20475c08d9e4"
+  integrity sha512-SL6KhfM7PTqiFmbCW3eVNwVBZ+88Mrzbuvn9olPsfv43mbiWaFY+nRcz/TGGku0/lc2FepdMbImdMY1JrQ+zbw==
 
 "@types/raven@2.5.1":
   version "2.5.1"
