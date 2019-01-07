@@ -21,7 +21,7 @@
     "@types/bunyan": "1.8.5",
     "@types/bunyan-format": "0.2.0",
     "@types/cache-manager": "1.2.6",
-    "@types/dotenv": "4.0.3",
+    "@types/dotenv": "6.1.0",
     "@types/express": "4.16.0",
     "@types/jest": "23.3.12",
     "@types/js-yaml": "3.11.4",
