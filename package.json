@@ -15,7 +15,7 @@
   "dependencies": {
     "js-yaml": "3.12.1",
     "probot": "7.3.1",
-    "typescript": "3.1.6"
+    "typescript": "3.2.2"
   },
   "devDependencies": {
     "@types/bunyan": "1.8.5",
