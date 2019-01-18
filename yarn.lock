@@ -143,12 +143,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.39.tgz#e7e87ad00364dd7bc485c940926345b8ec1a26ca"
   integrity sha512-rE7fktr02J8ybFf6eysife+WF+L4sAHWzw09DgdCebEu+qDwMvv4zl6Bc+825ttGZP73kCKxa3dhJOoGJ8+5mA==
 
-"@types/raven@2.5.1":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@types/raven/-/raven-2.5.1.tgz#62ef0a59e29691945e1f295b62ed199619cbd9b6"
-  integrity sha512-pWEyOzD1VUXqVpDaZGsa1LnhZqXwTjMwVftNVU+nj7QOvRj+HvwUc4aVtljoj3CWGiBPUZyCTOHrtzvx56IQRQ==
+"@types/raven@2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@types/raven/-/raven-2.5.2.tgz#612240360dd080e22bf8fa07bf9f9dfbf15824cb"
+  integrity sha512-Ex6Vqx82JCs3SbRPGooeUaIuolJ3WYdMdY+2C8Ko7a66NoLEA3V79FqWlhS7bTieOPs5vrLlu/vxBlJIwobNeQ==
   dependencies:
-    "@types/events" "*"
     "@types/node" "*"
 
 "@types/resolve@0.0.8":
