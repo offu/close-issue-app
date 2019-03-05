@@ -154,7 +154,6 @@
     buffer-equal-constant-time "^1.0.1"
     debug "^4.0.0"
 
-<<<<<<< HEAD
 "@types/babel__traverse@^7.0.6":
   version "7.0.6"
   resolved "https://registry.yarnpkg.com/@types/babel__traverse/-/babel__traverse-7.0.6.tgz#328dd1a8fc4cfe3c8458be9477b219ea158fd7b2"
@@ -162,45 +161,10 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/body-parser@*":
-  version "1.17.0"
-  resolved "https://registry.npmjs.org/@types/body-parser/-/body-parser-1.17.0.tgz#9f5c9d9bd04bb54be32d5eb9fc0d8c974e6cf58c"
-  integrity sha512-a2+YeUjPkztKJu5aIF2yArYFQQp8d51wZ7DavSHjFuY1mqVgidGyzEQ41JIVNy82fXj8yPgy2vJmfIywgESW6w==
-  dependencies:
-    "@types/connect" "*"
-    "@types/node" "*"
-
-"@types/bunyan-format@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@types/bunyan-format/-/bunyan-format-0.2.0.tgz#de79bf9fe67ea0dcf5416c5f1acc46abb0bb68d8"
-  integrity sha512-e87MeYM9rZUaQ7UgNU5webttfTlJWhc8oFU/hQBe/GGcf3bspY4ajVHqF1YgbysXnCwZDZgAq1FEe8ufFZZsLw==
-  dependencies:
-    "@types/node" "*"
-
-"@types/bunyan@1.8.5":
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/@types/bunyan/-/bunyan-1.8.5.tgz#d992adbce8ed20cde634764bd8f269f29f703647"
-  integrity sha512-7n8ANtxh2c5A/NfCuv8cVtWcgSLdq76MQbtmbInpzXuPw4TSAReUJ+MGHK4m67I4zI3ynCJoABfaeHYJaYSeRg==
-  dependencies:
-    "@types/node" "*"
-
-"@types/cache-manager@1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@types/cache-manager/-/cache-manager-1.2.6.tgz#695410ca57696fd641bb766c09716e447e4cdf7b"
-  integrity sha512-qzS+NLFto9kVpfRIzm32yaskOsFwgJh1WbDdJP7WYaxiRUDxrYxXEmxF/1lRwWnNrYKBUegyVuiv4S4NflDiLw==
-
-"@types/connect@*":
-  version "3.4.32"
-  resolved "https://registry.npmjs.org/@types/connect/-/connect-3.4.32.tgz#aa0e9616b9435ccad02bc52b5b454ffc2c70ba28"
-  integrity sha512-4r8qa0quOvh7lGD0pre62CAb1oni1OO6ecJLGCezTmhQ8Fz50Arx9RUszryR8KlgK6avuSXvviL6yWyViQABOg==
-  dependencies:
-    "@types/node" "*"
-=======
 "@types/jest-diff@*":
   version "20.0.1"
   resolved "https://registry.yarnpkg.com/@types/jest-diff/-/jest-diff-20.0.1.tgz#35cc15b9c4f30a18ef21852e255fdb02f6d59b89"
   integrity sha512-yALhelO3i0hqZwhjtcr6dYyaLoCHbAMshwtj6cGxTvHZAKXHsYGdff6E8EPw3xLKY0ELUTQ69Q1rQiJENnccMA==
->>>>>>> chore(deps): update dependency @types/jest to v24
 
 "@types/jest@24.0.9":
   version "24.0.9"
@@ -214,10 +178,10 @@
   resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-3.12.0.tgz#3494ce97358e2675e24e97a747ec23478eeaf8b6"
   integrity sha512-UGEe/6RsNAxgWdknhzFZbCxuYc5I7b/YEKlfKbo+76SM8CJzGs7XKCj7zyugXViRbKYpXhSXhCYVQZL5tmDbpQ==
 
-"@types/node@8.10.42":
-  version "8.10.42"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.42.tgz#d3d8e738e13540a09b3f4a714dac1ffbf8939f7d"
-  integrity sha512-8LCqostMfYwQs9by1k21/P4KZp9uFQk3Q528y3qtPKQnCJmKz0Em3YzgeNjTNV1FVrG/7n/6j12d4UKg9zSgDw==
+"@types/node@10.12.29":
+  version "10.12.29"
+  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-10.12.29.tgz#c2c8d2d27bb55649fbafe8ea1731658421f38acf"
+  integrity sha1-wsjS0nu1Vkn7r+jqFzFlhCHzis8=
 
 "@types/supports-color@^5.3.0":
   version "5.3.0"
@@ -3431,16 +3395,7 @@ on-finished@~2.3.0:
   dependencies:
     ee-first "1.1.1"
 
-<<<<<<< HEAD
-on-headers@~1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/on-headers/-/on-headers-1.0.1.tgz#928f5d0f470d49342651ea6794b0857c100693f7"
-  integrity sha1-ko9dD0cNSTQmUepnlLCFfBAGk/c=
-
 once@^1.3.0, once@^1.3.1, once@^1.4.0:
-=======
-once@^1.3.0, once@^1.4.0:
->>>>>>> chore(deps): update dependency @types/jest to v24
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
   integrity sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
@@ -3796,22 +3751,6 @@ qs@^6.5.2, qs@~6.5.1:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
-
-<<<<<<< HEAD
-querystringify@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.0.0.tgz#fa3ed6e68eb15159457c89b37bc6472833195755"
-  integrity sha512-eTPo5t/4bgaMNZxyjWx6N2a6AuE0mq51KWvpc7nU/MAqixcI6v6KrGUKES0HaomdnolQBBXU/++X6/QQ9KL4tw==
-=======
-randomatic@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-3.0.0.tgz#d35490030eb4f7578de292ce6dfb04a91a128923"
-  integrity sha512-VdxFOIEY3mNO5PtSRkkle/hPJDHvQhK21oa73K4yAc9qmp6N429gAyF1gZMOTMeS0/AYzaV/2Trcef+NaIonSA==
-  dependencies:
-    is-number "^4.0.0"
-    kind-of "^6.0.0"
-    math-random "^1.0.1"
->>>>>>> chore(deps): update dependency @types/jest to v24
 
 range-parser@~1.2.0:
   version "1.2.0"
