@@ -1,8 +1,7 @@
 {
   "extends": [
-    "config:base"
-  ],
-  "patch": {
-    "automerge": true
-  }
+    "config:js-app",
+    ":maintainLockFilesWeekly",
+    ":automergePatch"
+  ]
 }
