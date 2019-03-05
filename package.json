@@ -14,8 +14,7 @@
   },
   "dependencies": {
     "js-yaml": "3.12.2",
-    "probot": "7.3.1",
-    "typescript": "3.2.4"
+    "probot": "7.3.1"
   },
   "devDependencies": {
     "@types/bunyan": "1.8.5",
@@ -38,7 +37,8 @@
     "smee-client": "1.0.2",
     "ts-jest": "24.0.0",
     "tslint": "5.12.1",
-    "tslint-config-standard": "8.0.1"
+    "tslint-config-standard": "8.0.1",
+    "typescript": "3.2.4"
   },
   "engines": {
     "node": ">= 8.3.0"
@@ -54,7 +54,7 @@
       "js"
     ],
     "transform": {
-      "^.+\\.(ts)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.(ts)$": "ts-jest"
     },
     "testMatch": [
       "**/__tests__/**/*.ts",
