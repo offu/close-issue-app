@@ -1,10 +1,10 @@
 {
-  "name": "werobot-bot",
+  "name": "close-issue-app",
   "version": "1.0.0",
   "description": "",
   "author": "helloqiu <helloqiu95@gmail.com>",
   "license": "AGPL-3.0-or-later",
-  "repository": "https://github.com/offu/werobot-bot.git",
+  "repository": "https://github.com/offu/close-issue-app",
   "scripts": {
     "dev": "nodemon -e ts --exec \"tsc && npm run start\"",
     "build": "rimraf dist && tsc",
