@@ -9,6 +9,7 @@ install:
   - yarn install --frozen-lockfile
 script:
   - yarn test
+  - yarn build
 after_success:
   - npm install codecov -g
   - codecov
