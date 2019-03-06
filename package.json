@@ -1,10 +1,10 @@
 {
-  "name": "werobot-bot",
+  "name": "close-issue-app",
   "version": "1.0.0",
   "description": "",
   "author": "helloqiu <helloqiu95@gmail.com>",
   "license": "AGPL-3.0-or-later",
-  "repository": "https://github.com/offu/werobot-bot.git",
+  "repository": "https://github.com/offu/close-issue-app",
   "scripts": {
     "dev": "nodemon -e ts --exec \"tsc && npm run start\"",
     "build": "rimraf dist && tsc",
@@ -17,31 +17,19 @@
     "probot": "7.3.1"
   },
   "devDependencies": {
-    "@types/bunyan": "1.8.5",
-    "@types/bunyan-format": "0.2.0",
-    "@types/cache-manager": "1.2.6",
-    "@types/dotenv": "6.1.0",
-    "@types/express": "4.16.1",
-    "@types/jest": "23.3.14",
+    "@types/jest": "24.0.9",
     "@types/js-yaml": "3.12.0",
-    "@types/jsonwebtoken": "8.3.0",
-    "@types/nock": "9.3.1",
-    "@types/node": "8.10.42",
-    "@types/raven": "2.5.3",
-    "@types/resolve": "0.0.8",
-    "@types/semver": "5.5.0",
-    "@types/supertest": "2.0.7",
-    "jest": "23.6.0",
+    "@types/node": "10.12.29",
+    "jest": "24.1.0",
     "nodemon": "1.18.10",
     "rimraf": "2.6.3",
-    "smee-client": "1.0.2",
     "ts-jest": "24.0.0",
     "tslint": "5.13.1",
     "tslint-config-standard": "8.0.1",
     "typescript": "3.3.3333"
   },
   "engines": {
-    "node": ">= 8.3.0"
+    "node": ">= 10"
   },
   "standard": {
     "env": [

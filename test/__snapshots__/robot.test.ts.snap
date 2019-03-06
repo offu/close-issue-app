@@ -17,7 +17,7 @@ exports[`robot robot config without default config 3`] = `
   ],
   "results": Array [
     Object {
-      "isThrow": false,
+      "type": "return",
       "value": Promise {},
     },
   ],
@@ -46,7 +46,7 @@ exports[`robot robot deal with issues invalid issue 1`] = `
   ],
   "results": Array [
     Object {
-      "isThrow": false,
+      "type": "return",
       "value": Promise {},
     },
   ],
@@ -67,7 +67,7 @@ exports[`robot robot deal with issues invalid issue 2`] = `
   ],
   "results": Array [
     Object {
-      "isThrow": false,
+      "type": "return",
       "value": Promise {},
     },
   ],
@@ -87,7 +87,7 @@ exports[`robot robot deal with issues invalid issue 3`] = `
   ],
   "results": Array [
     Object {
-      "isThrow": false,
+      "type": "return",
       "value": Promise {},
     },
   ],
