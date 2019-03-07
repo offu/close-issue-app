@@ -10,8 +10,12 @@ export = (robot: Application) => {
     try {
       remoteConfig = await getContent(context, '/.github/issue-close-app.yml')
     } catch (e) {
-      console.error(e)
-      return
+      if (e.hasOwnProperty('code') && e.code === 404) {
+        console.error(e)
+        return
+      } else {
+        throw e
+      }
     }
     try {
       if (!isString(remoteConfig)) {
