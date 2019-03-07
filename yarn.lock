@@ -161,10 +161,10 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/bunyan@^1.8.5":
+"@types/bunyan@1.8.5":
   version "1.8.5"
-  resolved "http://registry.npm.taobao.org/@types/bunyan/download/@types/bunyan-1.8.5.tgz#d992adbce8ed20cde634764bd8f269f29f703647"
-  integrity sha1-2ZKtvOjtIM3mNHZL2PJp8p9wNkc=
+  resolved "https://registry.yarnpkg.com/@types/bunyan/-/bunyan-1.8.5.tgz#d992adbce8ed20cde634764bd8f269f29f703647"
+  integrity sha512-7n8ANtxh2c5A/NfCuv8cVtWcgSLdq76MQbtmbInpzXuPw4TSAReUJ+MGHK4m67I4zI3ynCJoABfaeHYJaYSeRg==
   dependencies:
     "@types/node" "*"
 
