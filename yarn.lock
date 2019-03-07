@@ -161,6 +161,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/bunyan@^1.8.5":
+  version "1.8.5"
+  resolved "http://registry.npm.taobao.org/@types/bunyan/download/@types/bunyan-1.8.5.tgz#d992adbce8ed20cde634764bd8f269f29f703647"
+  integrity sha1-2ZKtvOjtIM3mNHZL2PJp8p9wNkc=
+  dependencies:
+    "@types/node" "*"
+
 "@types/jest-diff@*":
   version "20.0.1"
   resolved "https://registry.yarnpkg.com/@types/jest-diff/-/jest-diff-20.0.1.tgz#35cc15b9c4f30a18ef21852e255fdb02f6d59b89"
@@ -177,6 +184,11 @@
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-3.12.0.tgz#3494ce97358e2675e24e97a747ec23478eeaf8b6"
   integrity sha512-UGEe/6RsNAxgWdknhzFZbCxuYc5I7b/YEKlfKbo+76SM8CJzGs7XKCj7zyugXViRbKYpXhSXhCYVQZL5tmDbpQ==
+
+"@types/node@*":
+  version "11.10.5"
+  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-11.10.5.tgz#fbaca34086bdc118011e1f05c47688d432f2d571"
+  integrity sha1-+6yjQIa9wRgBHh8FxHaI1DLy1XE=
 
 "@types/node@10.12.30":
   version "10.12.30"
