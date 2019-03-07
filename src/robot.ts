@@ -6,7 +6,13 @@ import { isString } from 'util'
 
 export = (robot: Application) => {
   robot.on(['issues.opened', 'issues.reopened'], async context => {
-    const remoteConfig = await getContent(context, '/.github/issue-close-app.yml')
+    let remoteConfig: string | null = null
+    try {
+      remoteConfig = await getContent(context, '/.github/issue-close-app.yml')
+    } catch (e) {
+      console.error(e)
+      return
+    }
     try {
       if (!isString(remoteConfig)) {
         throw Error(`remote config is not a string:\n${remoteConfig}`)
