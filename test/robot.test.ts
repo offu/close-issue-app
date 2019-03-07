@@ -1,9 +1,10 @@
-import { Application } from 'probot'
+import { Application, Context } from 'probot'
 import * as path from 'path'
 import * as fs from 'fs'
 import app = require('../src/robot')
 import payload from './fixtures/issues.event.json'
 import * as yaml from 'js-yaml'
+const HttpError = require('@octokit/rest/lib/request/http-error')
 
 describe('robot', () => {
   let robot
@@ -63,7 +64,7 @@ describe('robot', () => {
       expect(github.repos.getContent).toMatchSnapshot()
     })
 
-    it('get error', async () => {
+    it('get invalid config', async () => {
       // Setup a new github to return an invalid config
       github.repos.getContent = jest.fn().mockResolvedValue({ data: {
         content: '233',
@@ -77,6 +78,20 @@ describe('robot', () => {
       delete createCommentParams.body
       expect(createCommentParams).toMatchSnapshot()
       expect(body).toMatch(/The app gets an error\. \:\(.*/)
+    })
+
+    it('config file not found', async () => {
+      const error = new HttpError('test', 404, null)
+      github.repos.getContent = jest.fn().mockImplementation(async (context: Context, path: string) => {
+        throw error
+      })
+      robot.auth = () => Promise.resolve(github)
+      const mockedError = jest.spyOn(console, 'error')
+      mockedError.mockImplementation()
+
+      await robot.receive(payload)
+      expect(console.error).toBeCalledWith(error)
+      mockedError.mockReset()
     })
   })
 })

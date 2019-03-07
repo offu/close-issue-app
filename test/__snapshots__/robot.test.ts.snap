@@ -24,7 +24,7 @@ exports[`robot robot config without default config 3`] = `
 }
 `;
 
-exports[`robot robot deal with issues get error 1`] = `
+exports[`robot robot deal with issues get invalid config 1`] = `
 Object {
   "number": 2,
   "owner": "baxterthehacker",
