@@ -27,7 +27,7 @@ describe('isBotConfig', () => {
     expect(isBotConfig(wrongExample2)).toBeFalsy()
   })
 
-  it('right example without caseSensitive', () => {
+  it('right example without optional properties', () => {
     const rightExample = {
       issueConfigs: [{ content: ['123'] }],
       comment: 'test'
@@ -40,6 +40,15 @@ describe('isBotConfig', () => {
       issueConfigs: [{ content: ['123'] }],
       comment: 'test',
       caseSensitive: true
+    }
+    expect(isBotConfig(rightExample)).toBeTruthy()
+  })
+
+  it('right example with label', () => {
+    const rightExample = {
+      issueConfigs: [{ content: ['123'] }],
+      comment: 'test',
+      label: '🐱'
     }
     expect(isBotConfig(rightExample)).toBeTruthy()
   })

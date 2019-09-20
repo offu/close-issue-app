@@ -93,5 +93,23 @@ describe('robot', () => {
       expect(console.error).toBeCalledWith(error)
       mockedError.mockReset()
     })
+
+    it('create label if the label does not exist', async () => {
+      github.issues.createLabel = jest.fn().mockResolvedValue(null)
+      github.issues.addLabels = jest.fn().mockResolvedValue(null)
+      const error = new HttpError('test', 404, null)
+      github.issues.getLabel = jest.fn().mockImplementation(async (context: Context, path: string) => {
+        throw error
+      })
+      const config = yaml.safeLoad(exampleConfig)
+      config.label = '🐱'
+      github.repos.getContent = jest.fn().mockResolvedValue({ data: {
+        content: yaml.safeDump(config),
+        encoding: 'utf-8'
+      }})
+      await robot.receive(payload)
+      expect(github.issues.createLabel).toMatchSnapshot()
+      expect(github.issues.addLabels).toMatchSnapshot()
+    })
   })
 })
