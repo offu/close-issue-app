@@ -24,6 +24,50 @@ exports[`robot robot config without default config 3`] = `
 }
 `;
 
+exports[`robot robot deal with issues create label if the label does not exist 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "color": "aa1414",
+        "name": "🐱",
+        "owner": "baxterthehacker",
+        "repo": "public-repo",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {},
+    },
+  ],
+}
+`;
+
+exports[`robot robot deal with issues create label if the label does not exist 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "labels": Array [
+          "🐱",
+        ],
+        "number": 2,
+        "owner": "baxterthehacker",
+        "repo": "public-repo",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Promise {},
+    },
+  ],
+}
+`;
+
 exports[`robot robot deal with issues get invalid config 1`] = `
 Object {
   "number": 2,

@@ -1,8 +1,8 @@
 import { Application } from 'probot'
-import { parseConfig, shouldClose } from './parser'
-import { closeIssue, createComment, getContent } from './api'
-import { errorComment } from './models'
 import { isString } from 'util'
+import { addLabel, closeIssue, createComment, getContent } from './api'
+import { errorComment } from './models'
+import { parseConfig, shouldClose } from './parser'
 
 export = (robot: Application) => {
   robot.on(['issues.opened', 'issues.reopened'], async context => {
@@ -28,6 +28,9 @@ export = (robot: Application) => {
       if (shouldClose(config, issueBody)) {
         await createComment(context, config.comment)
         await closeIssue(context)
+        if (config.label) {
+          await addLabel(context, config.label)
+        }
       }
     } catch (e) {
       await createComment(context, `${errorComment}

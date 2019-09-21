@@ -12,6 +12,8 @@ export interface BotConfig {
   comment: string,
   /** whether the keywords are case-sensitive */
   caseInsensitive?: boolean
+  /** the label that will be added when the bot close an issue */
+  label?: string
 }
 
 /**

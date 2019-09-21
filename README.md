@@ -7,7 +7,7 @@ The app will check new opened and reopened issues if they include some specific 
 ### Usage
 1. Create a `.github/issue-close-app.yml` file in your repo. Here's an example:  
 ``` yaml
-# Comment that will be sent if an issue is judged to be closed
+# Comment that will be sent if an issue is judged to be closed.
 comment: "This issue is closed because it does not meet our issue template. Please read it."
 issueConfigs:
 # There can be several configs for different kind of issues.
@@ -27,6 +27,9 @@ issueConfigs:
 # whether the keywords are case-insensitive
 # default value is false, which means keywords are case-sensitive
 caseInsensitive: false
+# the label that will be added when the bot close an issue
+# The bot will only add a label if this property is set.
+label: "closed by bot"
 # The issue is judged to be legal if it includes all keywords from any of these two configs.
 # Or it will be closed by the app.
 ```
