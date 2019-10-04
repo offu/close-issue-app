@@ -10,11 +10,14 @@
     "build": "rimraf dist && tsc",
     "start": "probot run ./dist/robot.js",
     "test": "jest --coverage",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "js-yaml": "3.13.1",
-    "probot": "7.3.1"
+    "probot": "7.3.1",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@types/bunyan": "1.8.6",
@@ -52,5 +55,6 @@
     "collectCoverageFrom": [
       "<rootDir>/src/*.ts"
     ]
-  }
+  },
+  "snyk": true
 }
