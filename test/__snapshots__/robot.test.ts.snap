@@ -102,7 +102,7 @@ exports[`robot robot deal with issues invalid issue 2`] = `
   "calls": Array [
     Array [
       Object {
-        "number": 2,
+        "issue_number": 2,
         "owner": "baxterthehacker",
         "repo": "public-repo",
         "state": "closed",

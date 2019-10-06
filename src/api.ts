@@ -5,9 +5,9 @@ export async function closeIssue (context: Context) {
   const params = {
     owner: context.payload.repository.owner.login,
     repo: context.payload.repository.name,
-    number: context.payload.issue.number
+    issue_number: context.payload.issue.number
   }
-  await context.github.issues.edit({
+  await context.github.issues.update({
     ...params,
     state: 'closed'
   })
@@ -21,7 +21,7 @@ export async function createLabelIfNotExist (context, label: string) {
       name: label
     })
   } catch (e) {
-    if (e.hasOwnProperty('code') && e.code === 404) {
+    if (e.hasOwnProperty('status') && e.status === 404) {
       await context.github.issues.createLabel({
         owner: context.payload.repository.owner.login,
         repo: context.payload.repository.name,
@@ -61,9 +61,9 @@ export async function getContent (context: Context, path: string) {
     owner: context.payload.repository.owner.login,
     repo: context.payload.repository.name
   }
-  const resp = await context.github.repos.getContent({
+  const resp = await context.github.repos.getContents({
     path,
     ...params
   })
-  return Buffer.from(resp.data.content, resp.data.encoding).toString('utf-8')
+  return Buffer.from(resp.data[0].content, resp.data[0].encoding).toString('utf-8')
 }
