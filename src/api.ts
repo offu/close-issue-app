@@ -21,7 +21,7 @@ export async function createLabelIfNotExist (context, label: string) {
       name: label
     })
   } catch (e) {
-    if (e.hasOwnProperty('status') && e.statusy === 404) {
+    if (e.hasOwnProperty('status') && e.status === 404) {
       await context.github.issues.createLabel({
         owner: context.payload.repository.owner.login,
         repo: context.payload.repository.name,
