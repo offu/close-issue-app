@@ -10,7 +10,7 @@ export = (robot: Application) => {
     try {
       remoteConfig = await getContent(context, '/.github/issue-close-app.yml')
     } catch (e) {
-      if (e.hasOwnProperty('code') && e.code === 404) {
+      if (e.hasOwnProperty('status') && e.status === 404) {
         // config file from this repo may not be found
         // ignore this kind of error
         console.error(e)

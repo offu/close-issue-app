@@ -4,7 +4,7 @@ import * as fs from 'fs'
 import app = require('../src/robot')
 import payload from './fixtures/issues.event.json'
 import * as yaml from 'js-yaml'
-const HttpError = require('@octokit/rest/lib/request/http-error')
+import { RequestError as HttpError } from '@octokit/request-error'
 
 describe('robot', () => {
   let robot
@@ -17,13 +17,13 @@ describe('robot', () => {
     github = {
       issues: {
         createComment: jest.fn().mockResolvedValue(null),
-        edit: jest.fn().mockResolvedValue(null)
+        update: jest.fn().mockResolvedValue(null)
       },
       repos: {
-        getContent: jest.fn().mockResolvedValue({ data: {
+        getContents: jest.fn().mockResolvedValue({ data: [{
           content: exampleConfig,
           encoding: 'utf-8'
-        }})
+        }]})
       }
     }
     robot.auth = () => Promise.resolve(github)
@@ -37,13 +37,13 @@ describe('robot', () => {
       github = {
         issues: {
           createComment: jest.fn().mockResolvedValue(null),
-          edit: jest.fn().mockResolvedValue(null)
+          update: jest.fn().mockResolvedValue(null)
         },
         repos: {
-          getContent: jest.fn().mockResolvedValue({ data: {
+          getContents: jest.fn().mockResolvedValue({ data: [{
             content: yaml.safeDump(noDefaultConfig),
             encoding: 'utf-8'
-          }})
+          }]})
         }
       }
       robot.auth = () => Promise.resolve(github)
@@ -51,8 +51,8 @@ describe('robot', () => {
       lowerPayload.payload.issue.body = 'test'
       await robot.receive(payload)
       expect(github.issues.createComment).toMatchSnapshot()
-      expect(github.issues.edit).toMatchSnapshot()
-      expect(github.repos.getContent).toMatchSnapshot()
+      expect(github.issues.update).toMatchSnapshot()
+      expect(github.repos.getContents).toMatchSnapshot()
     })
   })
 
@@ -60,16 +60,16 @@ describe('robot', () => {
     it('invalid issue', async () => {
       await robot.receive(payload)
       expect(github.issues.createComment).toMatchSnapshot()
-      expect(github.issues.edit).toMatchSnapshot()
-      expect(github.repos.getContent).toMatchSnapshot()
+      expect(github.issues.update).toMatchSnapshot()
+      expect(github.repos.getContents).toMatchSnapshot()
     })
 
     it('get invalid config', async () => {
       // Setup a new github to return an invalid config
-      github.repos.getContent = jest.fn().mockResolvedValue({ data: {
+      github.repos.getContents = jest.fn().mockResolvedValue({ data: [{
         content: '233',
         encoding: 'utf-8'
-      }})
+      }]})
       robot.auth = () => Promise.resolve(github)
 
       await expect(robot.receive(payload)).rejects.toThrowError('invalid config')
@@ -81,8 +81,15 @@ describe('robot', () => {
     })
 
     it('config file not found', async () => {
-      const error = new HttpError('test', 404, null)
-      github.repos.getContent = jest.fn().mockImplementation(async (context: Context, path: string) => {
+      const error = new HttpError('test', 404, {
+        headers: {},
+        request: {
+          method: 'GET',
+          url: 'test',
+          headers: {}
+        }
+      })
+      github.repos.getContents = jest.fn().mockImplementation(async (context: Context, path: string) => {
         throw error
       })
       robot.auth = () => Promise.resolve(github)
@@ -97,16 +104,23 @@ describe('robot', () => {
     it('create label if the label does not exist', async () => {
       github.issues.createLabel = jest.fn().mockResolvedValue(null)
       github.issues.addLabels = jest.fn().mockResolvedValue(null)
-      const error = new HttpError('test', 404, null)
+      const error = new HttpError('test', 404, {
+        headers: {},
+        request: {
+          method: 'GET',
+          url: 'test',
+          headers: {}
+        }
+      })
       github.issues.getLabel = jest.fn().mockImplementation(async (context: Context, path: string) => {
         throw error
       })
       const config = yaml.safeLoad(exampleConfig)
       config.label = '🐱'
-      github.repos.getContent = jest.fn().mockResolvedValue({ data: {
+      github.repos.getContents = jest.fn().mockResolvedValue({ data: [{
         content: yaml.safeDump(config),
         encoding: 'utf-8'
-      }})
+      }]})
       await robot.receive(payload)
       expect(github.issues.createLabel).toMatchSnapshot()
       expect(github.issues.addLabels).toMatchSnapshot()
