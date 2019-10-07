@@ -65,5 +65,9 @@ export async function getContent (context: Context, path: string) {
     path,
     ...params
   })
-  return Buffer.from(resp.data[0].content, resp.data[0].encoding).toString('utf-8')
+  if (!(resp.data instanceof Array) && 'content' in resp.data && resp.data.content) {
+    return Buffer.from(resp.data.content, resp.data.encoding).toString('utf-8')
+  } else {
+    return null
+  }
 }
