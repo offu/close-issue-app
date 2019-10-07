@@ -20,10 +20,10 @@ describe('robot', () => {
         update: jest.fn().mockResolvedValue(null)
       },
       repos: {
-        getContents: jest.fn().mockResolvedValue({ data: [{
+        getContents: jest.fn().mockResolvedValue({ data: {
           content: exampleConfig,
           encoding: 'utf-8'
-        }]})
+        }})
       }
     }
     robot.auth = () => Promise.resolve(github)
@@ -40,10 +40,10 @@ describe('robot', () => {
           update: jest.fn().mockResolvedValue(null)
         },
         repos: {
-          getContents: jest.fn().mockResolvedValue({ data: [{
+          getContents: jest.fn().mockResolvedValue({ data: {
             content: yaml.safeDump(noDefaultConfig),
             encoding: 'utf-8'
-          }]})
+          }})
         }
       }
       robot.auth = () => Promise.resolve(github)
@@ -66,10 +66,10 @@ describe('robot', () => {
 
     it('get invalid config', async () => {
       // Setup a new github to return an invalid config
-      github.repos.getContents = jest.fn().mockResolvedValue({ data: [{
+      github.repos.getContents = jest.fn().mockResolvedValue({ data: {
         content: '233',
         encoding: 'utf-8'
-      }]})
+      }})
       robot.auth = () => Promise.resolve(github)
 
       await expect(robot.receive(payload)).rejects.toThrowError('invalid config')
@@ -117,10 +117,10 @@ describe('robot', () => {
       })
       const config = yaml.safeLoad(exampleConfig)
       config.label = '🐱'
-      github.repos.getContents = jest.fn().mockResolvedValue({ data: [{
+      github.repos.getContents = jest.fn().mockResolvedValue({ data: {
         content: yaml.safeDump(config),
         encoding: 'utf-8'
-      }]})
+      }})
       await robot.receive(payload)
       expect(github.issues.createLabel).toMatchSnapshot()
       expect(github.issues.addLabels).toMatchSnapshot()
