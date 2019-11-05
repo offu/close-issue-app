@@ -313,10 +313,13 @@
     "@octokit/types" "^2.0.0"
     universal-user-agent "^4.0.0"
 
-"@octokit/plugin-enterprise-compatibility@^1.0.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-enterprise-compatibility/-/plugin-enterprise-compatibility-1.1.1.tgz#1d4189d588eccb1bbc23cd72278129491cfba5d2"
-  integrity sha512-/o09y5I1JJMGGTU2y//QXBKjILX0BaDgBK27NRBJPRxD4BsDVzIsRFQm7ejPWW3l2xOao8tvN7Yh73D5cXBBbg==
+"@octokit/plugin-enterprise-compatibility@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-enterprise-compatibility/-/plugin-enterprise-compatibility-1.2.1.tgz#ea8fa7fd4b04fac2289bac1d63791c77a23a74fb"
+  integrity sha512-c77pFG3CyxhQbu2B80TI/GVA0ex9krEAyBbdMGn8h8EtZoldK+4Bru2ecdFKfy5xi8RlmzIXIeTwi6wApd5/VQ==
+  dependencies:
+    "@octokit/request-error" "^1.2.0"
+    "@octokit/types" "^2.0.1"
 
 "@octokit/plugin-retry@^2.1.1":
   version "2.2.0"
@@ -336,6 +339,15 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@octokit/request-error/-/request-error-1.1.0.tgz#e62203395fc9786a26ab050e79d0a7dfa41ab747"
   integrity sha512-06lt8PulL3rKpmwzYLCeLEt1iHFoj8l0PLkObAtp5Cx0Wwd1+5FAa9u6UXjA0kzYsfbjBKF9TtO9CuXelKiYlw==
+  dependencies:
+    "@octokit/types" "^2.0.0"
+    deprecation "^2.0.0"
+    once "^1.4.0"
+
+"@octokit/request-error@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@octokit/request-error/-/request-error-1.2.0.tgz#a64d2a9d7a13555570cd79722de4a4d76371baaa"
+  integrity sha512-DNBhROBYjjV/I9n7A8kVkmQNkqFAMem90dSxqvPq57e2hBr7mNTX98y3R2zDpqMQHVRpBDjsvsfIGgBzy+4PAg==
   dependencies:
     "@octokit/types" "^2.0.0"
     deprecation "^2.0.0"
@@ -379,6 +391,13 @@
   integrity sha512-467rp1g6YuxuNbu1m3A5BuGWxtzyVE8sAyN9+k3kb2LdnpmLPTiPsywbYmcckgfGZ+/AGpAaNrVx7131iSUXbQ==
   dependencies:
     "@types/node" "^12.11.1"
+
+"@octokit/types@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-2.0.1.tgz#0caf0364e010296265621593ac9a37f40ef75dad"
+  integrity sha512-YDYgV6nCzdGdOm7wy43Ce8SQ3M5DMKegB8E5sTB/1xrxOdo2yS/KgUgML2N2ZGD621mkbdrAglwTyA4NDOlFFA==
+  dependencies:
+    "@types/node" ">= 8"
 
 "@octokit/webhooks@^6.0.0":
   version "6.3.2"
@@ -464,7 +483,7 @@
   resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-3.12.1.tgz#5c6f4a1eabca84792fbd916f0cb40847f123c656"
   integrity sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
 
-"@types/node@*", "@types/node@^12.11.1":
+"@types/node@*", "@types/node@>= 8", "@types/node@^12.11.1":
   version "12.12.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.5.tgz#66103d2eddc543d44a04394abb7be52506d7f290"
   integrity sha512-KEjODidV4XYUlJBF3XdjSH5FWoMCtO0utnhtdLf1AgeuZLOrRbvmU/gaRCVg7ZaQDjVf3l84egiY0mRNe5xE4A==
@@ -3810,14 +3829,14 @@ pretty-format@^24.9.0:
     ansi-styles "^3.2.0"
     react-is "^16.8.4"
 
-probot@9.6.3:
-  version "9.6.3"
-  resolved "https://registry.yarnpkg.com/probot/-/probot-9.6.3.tgz#226cb54fe16c4cb7387cae5250fc60bda604a53a"
-  integrity sha512-sqZ4RLrBHeyzxQv2PozE8iyjcYSTdiZH0DBiYR7xVA/EvvaMYhB0W8J+nlB5pj8hrj70UIgLgo9ripPvB8XTlw==
+probot@9.6.4:
+  version "9.6.4"
+  resolved "https://registry.yarnpkg.com/probot/-/probot-9.6.4.tgz#e125cd0f127c4d35803096836a76cb8f390b76be"
+  integrity sha512-RYIcczJArPNSF9D4piZi6S5KZ67V+As+Jr6ymYlVb7BBREaaFluLblKb69xT/AvSAoDq6L66gJtC5k/dAc9rCw==
   dependencies:
     "@octokit/app" "^4.0.0"
     "@octokit/graphql" "^4.2.0"
-    "@octokit/plugin-enterprise-compatibility" "^1.0.0"
+    "@octokit/plugin-enterprise-compatibility" "^1.2.1"
     "@octokit/plugin-retry" "^2.1.1"
     "@octokit/plugin-throttling" "^2.3.0"
     "@octokit/request" "^5.1.0"
