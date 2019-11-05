@@ -25,7 +25,7 @@
     "nodemon": "1.19.4",
     "rimraf": "3.0.0",
     "ts-jest": "24.1.0",
-    "tslint": "5.20.0",
+    "tslint": "5.20.1",
     "tslint-config-standard": "9.0.0",
     "typescript": "3.7.2"
   },
