@@ -4,6 +4,10 @@ exports[`parseConfig right example with default values 1`] = `
 Object {
   "caseInsensitive": true,
   "comment": "test",
+  "exception": Array [
+    "username1",
+    "username2",
+  ],
   "issueConfigs": Array [
     Object {
       "content": Array [
