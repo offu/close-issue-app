@@ -30,6 +30,10 @@ caseInsensitive: false
 # the label that will be added when the bot close an issue
 # The bot will only add a label if this property is set.
 label: "closed by bot"
+# The bot will ignore any issues that are opened or reopened by the user names in exception
+exception:
+  - "username1"
+  - "username2"
 # The issue is judged to be legal if it includes all keywords from any of these two configs.
 # Or it will be closed by the app.
 ```
