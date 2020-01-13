@@ -7,3 +7,6 @@ issueConfigs:
 - content:
   - "🐱"
 caseInsensitive: true
+exception:
+  - "username1"
+  - "username2"

@@ -25,7 +25,8 @@ export = (robot: Application) => {
       }
       const config = parseConfig(remoteConfig)
       const issueBody = context.payload.issue.body
-      if (shouldClose(config, issueBody)) {
+      const senderName = context.payload.sender.login
+      if (shouldClose(config, issueBody, senderName)) {
         await createComment(context, config.comment)
         await closeIssue(context)
         if (config.label) {

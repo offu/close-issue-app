@@ -14,6 +14,10 @@ export interface BotConfig {
   caseInsensitive?: boolean
   /** the label that will be added when the bot close an issue */
   label?: string
+  /** the bot will ignore any issues that
+   * are opened or reopened by the user names in exception
+   */
+  exception?: Array<string>
 }
 
 /**
