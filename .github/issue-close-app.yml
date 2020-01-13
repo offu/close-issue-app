@@ -11,3 +11,6 @@ issueConfigs:
   - "Describe alternatives you've considered"
   - "Additional context"
 label: "closed by bot"
+exception:
+  - "helloqiu"
+  - "whtsky"
