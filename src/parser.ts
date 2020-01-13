@@ -13,7 +13,10 @@ export function parseConfig (content: string): BotConfig {
   }
 }
 
-export function shouldClose (botConfig: BotConfig, content: string): boolean {
+export function shouldClose (botConfig: BotConfig, content: string, senderName: string): boolean {
+  if (botConfig.exception && botConfig.exception.includes(senderName)) {
+    return false
+  }
   return !botConfig.issueConfigs.some((issueConfig) => {
     return issueConfig.content.every((issueContent) => {
       if (botConfig.caseInsensitive) {
