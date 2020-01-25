@@ -19,7 +19,7 @@
   "devDependencies": {
     "@types/bunyan": "1.8.6",
     "@types/jest": "24.9.1",
-    "@types/js-yaml": "3.12.1",
+    "@types/js-yaml": "3.12.2",
     "@types/node": "10.17.13",
     "jest": "25.1.0",
     "nodemon": "2.0.2",
