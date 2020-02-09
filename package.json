@@ -23,7 +23,7 @@
     "@types/node": "10.17.14",
     "jest": "25.1.0",
     "nodemon": "2.0.2",
-    "rimraf": "3.0.1",
+    "rimraf": "3.0.2",
     "ts-jest": "25.2.0",
     "tslint": "5.20.1",
     "tslint-config-standard": "9.0.0",
