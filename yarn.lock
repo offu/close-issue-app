@@ -1250,10 +1250,10 @@ commander@^2.12.1, commander@~2.20.3:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-commander@^4.0.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
-  integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
+commander@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-5.0.0.tgz#dbf1909b49e5044f8fdaf0adc809f0c0722bdfd0"
+  integrity sha512-JrDGPAKjMGSP1G0DUoaceEJ3DZgAfr/q6X7FVk4+U5KxUSKviYGM2k6zWkfyyBHy5rAtzgYJFa1ro2O9PtoxwQ==
 
 component-emitter@^1.2.1:
   version "1.3.0"
@@ -4048,10 +4048,10 @@ pretty-format@^25.1.0:
     ansi-styles "^4.0.0"
     react-is "^16.12.0"
 
-probot@9.9.8:
-  version "9.9.8"
-  resolved "https://registry.yarnpkg.com/probot/-/probot-9.9.8.tgz#0ea75912573ce0dd2a4d3e810bd5036a5d7e21d0"
-  integrity sha512-cOWzXdfwG71PX3u+G7ymyDYYCucOJln9skvW4GYrEiFO4xmDPUqqE/YMGXk0GXO9uRNjO47yqe3joIEaG8pcPA==
+probot@9.10.2:
+  version "9.10.2"
+  resolved "https://registry.yarnpkg.com/probot/-/probot-9.10.2.tgz#a8c27c39862caf6de1fc34427d2d2193c2116e4b"
+  integrity sha512-7oir5mEK7W2uYSDlKunBfXkjoB3AuftIIw6eTxuDkeAYQlzKOV12kHYTk1SJZQJJqjzf7zgT5SW/1o+6Qo2NwQ==
   dependencies:
     "@octokit/app" "^4.0.0"
     "@octokit/graphql" "^4.2.0"
@@ -4067,7 +4067,7 @@ probot@9.9.8:
     bunyan-format "^0.2.1"
     bunyan-sentry-stream "^1.1.0"
     cache-manager "^3.0.0"
-    commander "^4.0.0"
+    commander "^5.0.0"
     deepmerge "^4.1.0"
     dotenv "~8.2.0"
     eventsource "^1.0.7"
