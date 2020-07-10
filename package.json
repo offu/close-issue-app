@@ -20,7 +20,7 @@
     "@types/bunyan": "1.8.6",
     "@types/jest": "26.0.3",
     "@types/js-yaml": "3.12.4",
-    "@types/node": "10.17.26",
+    "@types/node": "10.17.27",
     "jest": "26.1.0",
     "nodemon": "2.0.4",
     "rimraf": "3.0.2",
