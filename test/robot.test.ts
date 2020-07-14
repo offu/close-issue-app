@@ -5,6 +5,7 @@ import app = require('../src/robot')
 import payload from './fixtures/issues.event.json'
 import * as yaml from 'js-yaml'
 import { RequestError as HttpError } from '@octokit/request-error'
+import { BotConfig } from '../src/models'
 
 describe('robot', () => {
   let robot
@@ -31,7 +32,7 @@ describe('robot', () => {
 
   describe('robot config', () => {
     it('without default config', async () => {
-      const noDefaultConfig = yaml.safeLoad(exampleConfig)
+      const noDefaultConfig = <BotConfig>yaml.safeLoad(exampleConfig)
       noDefaultConfig.caseInsensitive = true
       noDefaultConfig.issueConfigs = [{ 'content': ['TEST'] }]
       github = {
@@ -115,7 +116,7 @@ describe('robot', () => {
       github.issues.getLabel = jest.fn().mockImplementation(async (context: Context, path: string) => {
         throw error
       })
-      const config = yaml.safeLoad(exampleConfig)
+      const config = <BotConfig>yaml.safeLoad(exampleConfig)
       config.label = '🐱'
       github.repos.getContents = jest.fn().mockResolvedValue({ data: {
         content: yaml.safeDump(config),
