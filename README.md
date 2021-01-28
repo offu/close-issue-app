@@ -1,5 +1,5 @@
 # Close Issue App
-[![Build Status](https://travis-ci.org/offu/close-issue-app.svg?branch=master)](https://travis-ci.org/offu/close-issue-app)
+[![Build Status](https://github.com/offu/close-issue-app/workflows/Run%20tests/badge.svg)](https://github.com/offu/close-issue-app/actions)
 [![codecov](https://codecov.io/gh/offu/close-issue-app/branch/master/graph/badge.svg)](https://codecov.io/gh/offu/close-issue-app)  
 An app to close issues.
 ### What It Does
