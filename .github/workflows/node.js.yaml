@@ -17,5 +17,6 @@ jobs:
     - run: yarn install --frozen-lockfile
     - run: yarn test
     - run: yarn build
-    - run: npm install codecov -g
-    - run: codecov
+    - uses: codecov/codecov-action@v1
+      with:
+        verbose: true
