@@ -1,9 +1,9 @@
-name: Node.js CI
+name: Run tests
 
 on: [push, pull_request]
 
 jobs:
-  test-and-build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -12,9 +12,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - run: yarn install --frozen-lockfile
-    - run: yarn test
-    - run: yarn build
-    - uses: codecov/codecov-action@v1
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    - name: Run the tests
+      run: yarn test
+    - name: Run codecov
+      uses: codecov/codecov-action@v1
       with:
-        verbose: true
+        token: ${{ secrets.CODECOV_TOKEN }}
