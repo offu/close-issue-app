@@ -13,7 +13,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "js-yaml": "3.14.0",
+    "js-yaml": "3.14.1",
     "probot": "9.15.1"
   },
   "devDependencies": {
