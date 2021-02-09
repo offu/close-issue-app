@@ -24,3 +24,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "close-issue-app"
           heroku_email: "helloqiu95@gmail.com"
+          remote_branch: master
