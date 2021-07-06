@@ -17,7 +17,7 @@
     "probot": "9.15.1"
   },
   "devDependencies": {
-    "@types/bunyan": "1.8.6",
+    "@types/bunyan": "1.8.7",
     "@types/jest": "26.0.23",
     "@types/js-yaml": "3.12.6",
     "@types/node": "10.17.60",
