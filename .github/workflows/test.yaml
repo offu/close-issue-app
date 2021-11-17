@@ -17,6 +17,6 @@ jobs:
     - name: Run the tests
       run: yarn test
     - name: Run codecov
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
