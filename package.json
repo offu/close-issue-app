@@ -22,7 +22,7 @@
     "@types/js-yaml": "3.12.7",
     "@types/node": "10.17.60",
     "jest": "26.6.3",
-    "nodemon": "2.0.15",
+    "nodemon": "2.0.16",
     "rimraf": "3.0.2",
     "ts-jest": "26.5.6",
     "tslint": "6.1.3",
