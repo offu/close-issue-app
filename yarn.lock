@@ -748,7 +748,14 @@
     "@types/connect" "*"
     "@types/node" "*"
 
-"@types/bunyan@1.8.8", "@types/bunyan@^1.8.4":
+"@types/bunyan@1.8.9":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@types/bunyan/-/bunyan-1.8.9.tgz#22d4517f3217b7c8f5a69bbc8c9f6df79779dcb5"
+  integrity sha512-ZqS9JGpBxVOvsawzmVt30sP++gSQMTejCkIAQ3VdadOcRE8izTyW66hufvwLeH+YEGP6Js2AW7Gz+RMyvrEbmw==
+  dependencies:
+    "@types/node" "*"
+
+"@types/bunyan@^1.8.4":
   version "1.8.8"
   resolved "https://registry.yarnpkg.com/@types/bunyan/-/bunyan-1.8.8.tgz#8d6d33f090f37c07e2a80af30ae728450a101008"
   integrity sha512-Cblq+Yydg3u+sGiz2mjHjC5MPmdjY+No4qvHrF+BUhblsmSfMvsHLbOG62tPbonsqBj6sbWv1LHcsoe5Jw+/Ow==
