@@ -829,10 +829,10 @@
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
 
-"@types/js-yaml@3.12.9":
-  version "3.12.9"
-  resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-3.12.9.tgz#b7a2bcc679a54c4240bd2909f58ce3396967e3f7"
-  integrity sha512-s5v3+2RB96nd7AOZXLScwHDRClor83+0E5q+5fzq0fTFXw8spF3QWHAUmHwItmmlr7XnDjpM0FkAgNKHzDTXtg==
+"@types/js-yaml@3.12.10":
+  version "3.12.10"
+  resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-3.12.10.tgz#4d80d0c7dfc570eb4f0be280cb2d67789f977ba5"
+  integrity sha512-/Mtaq/wf+HxXpvhzFYzrzCqNRcA958sW++7JOFC8nPrZcvfi/TrzOaaGbvt27ltJB2NQbHVAg5a1wUCsyMH7NA==
 
 "@types/mime@*":
   version "3.0.1"
