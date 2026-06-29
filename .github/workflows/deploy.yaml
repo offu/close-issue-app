@@ -9,10 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: bahmutov/npm-install@v1
+      - uses: actions/checkout@v2.7.0
+      - uses: bahmutov/npm-install@v1.12.1
       - name: Use Node.js to test and build
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v2.5.2
         with:
           node-version: '10.24.1'
       - name: Install dependencies

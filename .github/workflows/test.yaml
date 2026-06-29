@@ -6,10 +6,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: bahmutov/npm-install@v1
+    - uses: actions/checkout@v2.7.0
+    - uses: bahmutov/npm-install@v1.12.1
     - name: Use Node.js to test and build
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v2.5.2
       with:
         node-version: '10.24.1'
     - name: Install dependencies
@@ -17,6 +17,6 @@ jobs:
     - name: Run the tests
       run: yarn test
     - name: Run codecov
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v1.5.2
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
